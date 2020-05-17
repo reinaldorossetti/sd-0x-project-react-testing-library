@@ -43,5 +43,8 @@
       "!src/index.js",
       "!src/serviceWorker.js"
     ]
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "^3.2.3"
   }
 }
