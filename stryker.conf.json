@@ -24,7 +24,7 @@
     ]
   },
   "testRunner": "jest",
-  "timeoutMs": 20000,
+  "timeoutMS": 20000,
   "thresholds": { "high": 100, "low": 100, "break": 100 },
   "reporters": [
     "progress",

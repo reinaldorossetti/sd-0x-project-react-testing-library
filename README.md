@@ -140,6 +140,12 @@ A seguir estão listados todos os requisitos do projeto. Lembre-se: Cada requisi
 
   - Para ver a cobertura de testes, execute no terminal o comando `npm run test-coverage`.
 
+### 25 - Testando os testes
+
+  - Para que seus testes sejam avaliados, utilizaremos o [`Stryker`](https://stryker-mutator.io/). Ao terminar de formular seus testes, antes de seu PR final, utilize o comando `stryker run` para rodar os testes de mutação. Para ter seu projeto avaliado, o `Mutation Score` deve ser de 100%, qualquer valor abaixo disso, o PR não será avaliado.
+
+  - Obs: **Mutation Tests** estão sendo usados aqui para testar os testes 🤔. Eles funcionam da seguinte forma: são criadas versões alternativas(mutantes) do código da aplicação com mutações(variações) em seu conteúdo que podem não estar sendo contempladas pelos testes. Se o teste _não_ acusa(passa) aquela versão mutante como incorreta, dizemos que ela sobreviveu, enquanto se o teste acusa, dizemos que ela foi eliminada.
+
 ## BÔNUS
 
 A Pokédex é uma aplicação estática, com seus dados pré-definidos. Utilizando a [PokéAPI](https://pokeapi.co/), é possível deixá-la mais dinâmica e realista.
@@ -252,8 +258,6 @@ test('shows the Pokedéx when the route is `/`', () => {
 ---
 
 ### DURANTE O DESENVOLVIMENTO
-
-* ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA COM O SEU NOME** ⚠
 
 * Faça `commits` das alterações que você fizer no código regularmente
 
