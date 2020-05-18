@@ -14,7 +14,7 @@ class PokemonDetails extends React.Component {
         <div className="pokemon-habitat">
           {foundAt.map(({ location, map }) => (
             <div key={location}>
-              <img src={map} alt={`${name} location`} />
+              <img src={`${map}`} alt={`${name} location`} />
               <p><em>{location}</em></p>
             </div>
           ))}
@@ -26,9 +26,9 @@ class PokemonDetails extends React.Component {
   static renderSummary({ summary }) {
     return (
       <section>
-        <h2> Summary </h2>
+        <h2> {`Summary`} </h2>
         <p>
-          {summary}
+          {`${summary}`}
         </p>
       </section>
     );
@@ -52,7 +52,7 @@ class PokemonDetails extends React.Component {
     return (
       <form className="favorite-form">
         <label htmlFor="favorite">
-          Pokémon favoritado?
+          {`Pokémon favoritado?`}
           <input
             type="checkbox"
             id="favorite"

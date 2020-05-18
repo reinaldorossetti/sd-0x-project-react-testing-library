@@ -47,15 +47,16 @@ class Pokedex extends React.Component {
           onClick={() => this.filterPokemons('all')}
           className="filter-button"
         >
-          All
+          {`All`}
         </Button>
         {pokemonTypes.map((type) => (
           <Button
+            dataTestId={`pokemon-type-button`}
             key={type}
             onClick={() => this.filterPokemons(type)}
             className="filter-button"
           >
-            {type}
+            {`${type}`}
           </Button>
         ))}
       </div>
@@ -70,18 +71,19 @@ class Pokedex extends React.Component {
 
     return (
       <div className="pokedex">
-        <h2>Encountered pokémons</h2>
+        <h2>{`Encountered pokémons`}</h2>
         <Pokemon
           pokemon={pokemon}
           isFavorite={isPokemonFavoriteById[pokemon.id]}
         />
         {this.renderPokemonButtonsPanel()}
         <Button
+          dataTestId="next-pokemon"
           className="pokedex-button"
           onClick={() => this.nextPokemon(filteredPokemons.length)}
           disabled={filteredPokemons.length <= 1}
         >
-          Próximo pokémon
+          {`Próximo pokémon`}
         </Button>
       </div>
     );
