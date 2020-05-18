@@ -64,6 +64,8 @@ A seguir estão listados todos os requisitos do projeto. Lembre-se: Cada requisi
 
 ### 11 - A página de detalhes de pokémon deve exibir o nome, tipo, peso médio e imagem do pokémon exibido
 
+  - O nome do pokemon deve vir no formato `<name> Details`, onde `<name>` é o nome do pokemon;
+
   - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`, onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida;
 
   - A imagem deve conter um atributo `src` com a URL da imagem do pokémon. A imagem deverá ter também um atributo `alt` com o nome do pokémon.
@@ -193,9 +195,9 @@ Por default, os _endpoints_ da PokéAPI retornam no máximo 20 resultados. Utili
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-02-block15-react-tests.git`.
+  * `git clone git@github.com:tryber/sd-0x-block16-react-tests.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-02-block15-react-tests`
+    * `cd sd-0x-block16-react-tests`
 
 2. Instale as dependências
   * `npm install`
@@ -239,13 +241,13 @@ test('shows the Pokedéx when the route is `/`', () => {
   * Usando o exemplo anterior: `git push -u origin joaozinho-react-testing`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-02-block15-react-tests/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-block16-react-tests/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-02-block15-react-tests/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-block16-react-tests/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
@@ -266,14 +268,14 @@ test('shows the Pokedéx when the route is `/`', () => {
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-02`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
