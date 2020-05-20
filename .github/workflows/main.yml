@@ -18,7 +18,7 @@ jobs:
         if: steps.wait-for-build.outputs.conclusion == 'success'
       - name: Evaluator step
         id: test
-        uses: betrybe/stryker-evaluator-action@0.3
+        uses: betrybe/stryker-evaluator-action@0.4
         if: steps.wait-for-build.outputs.conclusion == 'success'
         with:
           repository-test-name: 'betrybe/sd-0x-block16-react-tests-tests'
