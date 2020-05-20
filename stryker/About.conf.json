@@ -1,11 +1,7 @@
 {
   "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
   "mutate": [
-    "src/App.js",
-    "!src/data.js",
-    "!src/components/Button.js",
-    "src/components/**/*.js?(x)",
-    "!src/**/*@(.test|.spec|Spec).js?(x)"
+    "src/components/About.js"
   ],
   "mutator": {
     "name": "javascript",
@@ -23,15 +19,19 @@
       "UpdateOperator"
     ]
   },
-  "testRunner": "jest",
+  "testRunner": "command",
+  "commandRunner": {
+    "command": "CI=true npm test 'src/components/About.test.js'"
+  },
   "timeoutMS": 20000,
-  "thresholds": { "high": 100, "low": 100, "break": 100 },
   "reporters": [
     "progress",
-    "clear-text"
+    "clear-text",
+    "html"
   ],
   "coverageAnalysis": "off",
   "jest": {
     "projectType": "create-react-app"
-  }
+  },
+  "warnings": false
 }
