@@ -1,4 +1,4 @@
-# Boas vindas ao repositório do projeto de Testes em React!
+# Boas vindas ao repositório do projeto de testes com a React Testing Library!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
 
@@ -10,19 +10,21 @@ Nesse projeto você escreverá testes para uma aplicação React.
 
 ## Desenvolvimento
 
-Este repositório já contém um _template_ de uma aplicação React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você não precisará realizar nenhuma configuração adicional. Você deverá utilizar [`Jest`](https://jestjs.io/) e a biblioteca [`React Testing Library`](https://testing-library.com/) (também já instaladas e configuradas) para escrever os testes. Note que o _template_ contém uma implementação completa de todos os requisitos da Pokédex. Seu trabalho será, para cada requisito ou sub-requisito listado a seguir, escrever ao menos um teste que garanta sua corretude. Cuidado com [testes _falsos positivos_](https://talkingabouttesting.com/2015/08/04/falsos-negativos-falsos-positivos-verdadeiros-negativos-e-verdadeiros-positivos/). Falsos positivos serão desconsiderados na avaliação.
+Este repositório já contém uma aplicação React criada e configurada. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você não precisará realizar nenhuma configuração adicional. Você deverá utilizar [`Jest`](https://jestjs.io/) e a biblioteca [`React Testing Library`](https://testing-library.com/) (também já instaladas e configuradas) para escrever os testes. Note que a aplicação contém uma implementação completa de todos os requisitos da Pokédex. Seu trabalho será, para cada requisito listado a seguir, escrever testes que garantam sua corretude. Cuidado com [testes _falsos positivos_](https://talkingabouttesting.com/2015/08/04/falsos-negativos-falsos-positivos-verdadeiros-negativos-e-verdadeiros-positivos/). Falsos positivos serão desconsiderados na avaliação.
 
-### Testando os testes
+### Quem testa os testes?
 
-  **Mutation Tests** estão sendo usados aqui para testar os testes 🤔. Eles funcionam da seguinte forma: são criadas versões alternativas(mutantes) do código da aplicação com mutações(variações) em seu conteúdo que podem não estar sendo contempladas pelos testes. Se o teste _não_ acusa(passa) aquela versão mutante como incorreta, dizemos que ela sobreviveu, enquanto se o teste acusa, dizemos que ela foi eliminada.
+  Nesse trabalho o avaliador automatizado **testam os testes de vocês!** A idéia dele é a seguinte: você vai escrever casos de teste para a aplicação, certo? E esses testes tem que garantir que a aplicação está funcionando, certo? Pois bem! Se eu quebro uma parte da aplicação, fazendo uma alteração no código, seus testes devem quebrar, certo? Pois é isso que o avaliador faz.
+  Como assim? Pense da seguinte forma: nosso avaliador vai navegar por toda a aplicação da Pokedéx e vai fazer várias mudanças no código dela **para que ela quebre e pare de funcionar**. Em seguida ele vai rodar seus testes. Caso seus testes não acusem que aplicação está com problemas o avaliador não vai aprovar aquele requisito! Se, para todas as alterações que o avaliador fizer no código da aplicação, o seus testes acusarem problemas, tudo será aprovado! O avaliador garante, portanto, que seus testes testam a aplicação da Pokedex como se deve!
+  Na linguagem do avaliador, dizemos que cada mudança que o avaliador faz na sua aplicação é um **mutante**. O avaliador cria vários mutantes e seus testes **devem matar todos!** Se algum mutante sobreviver, temos problemas. Certo? Vamos aos requisitos então!
 
 ## Requisitos do projeto
 
-A seguir estão listados todos os requisitos do projeto. Lembre-se que para a avaliação utilizaremos testes por mutação, então, cada requisito só será aceito se os testes tiverem comportamento adequado na aplicação tanto original como modificada.
+A seguir estão listados todos os requisitos do projeto. Lembre-se que para a avaliação utilizaremos testes por mutação, então cada requisito só será aceito se os testes tiverem comportamento adequado tanto na aplicação original como na modificada.
 
-Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos um teste dentro do arquivo `src/tests/App.test.js`.
+Todos os arquivos de teste que vocês usarão **já estão préviamente criados e novos arquivos não devem ser criados**. Como exemplo colocamos um teste dentro do arquivo `src/tests/App.test.js`. Além disso, **cada requisito se refere a um arquivo da aplicação da Pokedéx**. Obter aprovação num requisito significa que todos os casos de erro daquele arquivo estão cobertos, ou seja, todos os mutantes criados naquele arquivo pelo avaliador foram mortos. Nos subitens de cada requisito detalhamos o que é necessário fazer para obter a aprovação neles.
 
-### APP mutation test
+### 1. Testes do arquivo App.js
 
   - Ao carregar a aplicação no caminho de URL “/”, a página principal da Pokédex deve ser mostrada.
 
@@ -42,7 +44,7 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
   - Entrar em uma URL desconhecida exibe a página `Not Found`
 
-### About mutation test
+### 2. Testes do arquivo About.js
 
   - A página "About" deve exibir informações sobre a Pokédex
 
@@ -52,7 +54,7 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
   - A página deve conter a seguinte imagem de uma Pokédex: `https://cdn.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png`.
 
-### FavoritePokemons mutation test
+### 3. Testes do arquivo FavoritePokemons.js
 
   - Caso a pessoa não tenha pokemons favoritos, a mensagem `No favorite pokemon found`  deve aparecer na tela.
 
@@ -60,13 +62,13 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
   - A página deve exibir todos os cards de pokémons favoritados;
 
-### NotFound mutation test
+### 4. Testes do arquivo NotFound.js
 
   - A página deve conter um heading `h2` com o texto `Page requested not found 😭`;
 
   - A página deve exibir a imagem `https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif`.
 
-### Pokedex mutation test
+### 5. Testes do arquivo Pokedex.js
 
   - Ao apertar o botão de próximo, a página deve exibir o próximo pokémon da lista
 
@@ -76,7 +78,6 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
     - Ao se chegar ao último pokémon da lista, a Pokédex deve voltar para o primeiro pokémon no apertar do botão.
 
-  
   - A Pokédex deve exibir apenas um pokémon por vez
 
   - A Pokédex deve conter botões de filtro
@@ -99,7 +100,7 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
   - O botão de `Próximo pokémon` deve ser desabilitado se a lista filtrada de pokémons tiver um só pokémon
 
-### Pokemon mutation test
+### 6. Testes do arquivo Pokemon.js
 
   - Deve ser retornado um card com as informações de determinado pokemon;
 
@@ -107,7 +108,7 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
   - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`, onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida;
 
-  - A imagem deve conter um atributo `src` com a URL da imagem do pokémon. A imagem deverá ter também um atributo `alt` com o texto `<name> sprite`, , onde `<name>` é o nome do pokemon;
+  - A imagem deve conter um atributo `src` com a URL da imagem do pokémon. A imagem deverá ter também um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokemon;
 
   - O pokémon exibido na Pokedéx deve conter um link de navegação para exibir detalhes deste pokémon. O link deve possuir a URL `/pokemons/<id>`, onde `<id>` é o id do pokémon exibido;
 
@@ -119,7 +120,7 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
     - A imagem deve ter o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do pokémon cujos detalhes estão sendo exibidos.
 
-### PokemonDetails mutation test
+### Testes do arquivo PokemonDetails.js
 
   - Deve conter mais informações sobre apenas o pokemon selecionado;
 
@@ -149,16 +150,17 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
     - O label do checkbox deve ser `Pokémon favoritado?`.
 
-## Requisitos EXTRAS (Opcional)
+## Quer fazer mais? Temos algumas sugestões!
+
+O que temos a seguir não são requisitos bônus - são idéias para você se aprofundar mais no projeto e **aprender mais!** Que tal trabalhar neles? Começamos com algo bem direto:
 
   - A cobertura de testes deve ser 100%
 
     - Para ver a cobertura de testes, execute no terminal o comando `npm run test-coverage`.
 
+Além disso, a Pokédex é uma aplicação estática, com seus dados pré-definidos. Utilizando a [PokéAPI](https://pokeapi.co/), é possível deixá-la mais dinâmica e realista.
 
-A Pokédex é uma aplicação estática, com seus dados pré-definidos. Utilizando a [PokéAPI](https://pokeapi.co/), é possível deixá-la mais dinâmica e realista.
-
-Implemente os requisitos propostos a seguir e escreva testes para eles. Tente manter sempre a cobertura de testes em 100%, garantindo assim que não há código ou fluxos lógicos não testados. Para um desafio adicional, tente utilizar TDD - escreva os testes à medida que for implementando os requisitos.
+Se quiser implemente os requisitos propostos a seguir e escreva testes para eles. Tente manter sempre a cobertura de testes em 100%, garantindo assim que não há código ou fluxos lógicos não testados. Para um desafio adicional, tente utilizar TDD - escreva os testes à medida que for implementando os requisitos.
 
   - Adicione uma rota para exibir uma lista de localizações
 
