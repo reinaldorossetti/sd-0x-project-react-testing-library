@@ -14,15 +14,15 @@ Este repositório já contém uma aplicação React criada e configurada. Após 
 
 ### Quem testa os testes?
 
-  Nesse trabalho o avaliador automatizado **testam os testes de vocês!** A idéia dele é a seguinte: você vai escrever casos de teste para a aplicação, certo? E esses testes tem que garantir que a aplicação está funcionando, certo? Pois bem! Se eu quebro uma parte da aplicação, fazendo uma alteração no código, seus testes devem quebrar, certo? Pois é isso que o avaliador faz.
-  Como assim? Pense da seguinte forma: nosso avaliador vai navegar por toda a aplicação da Pokedéx e vai fazer várias mudanças no código dela **para que ela quebre e pare de funcionar**. Em seguida ele vai rodar seus testes. Caso seus testes não acusem que aplicação está com problemas o avaliador não vai aprovar aquele requisito! Se, para todas as alterações que o avaliador fizer no código da aplicação, o seus testes acusarem problemas, tudo será aprovado! O avaliador garante, portanto, que seus testes testam a aplicação da Pokedex como se deve!
+  Nesse trabalho o avaliador automatizado **testam os testes de vocês!** A ideia dele é a seguinte: você vai escrever casos de teste para a aplicação, certo? E esses testes têm que garantir que a aplicação está funcionando, certo? Pois bem! Se eu quebro uma parte da aplicação, fazendo uma alteração no código, seus testes devem quebrar, certo? Pois é isso que o avaliador faz.
+  Como assim? Pense da seguinte forma: nosso avaliador vai navegar por toda a aplicação da Pokédex e vai fazer várias mudanças no código dela **para que ela quebre e pare de funcionar**. Em seguida ele vai rodar seus testes. Caso seus testes não acusem que aplicação está com problemas o avaliador não vai aprovar aquele requisito! Se, para todas as alterações que o avaliador fizer no código da aplicação, os seus testes acusarem problemas, tudo será aprovado! O avaliador garante, portanto, que seus testes testam a aplicação da Pokédex como se deve!
   Na linguagem do avaliador, dizemos que cada mudança que o avaliador faz na sua aplicação é um **mutante**. O avaliador cria vários mutantes e seus testes **devem matar todos!** Se algum mutante sobreviver, temos problemas. Certo? Vamos aos requisitos então!
 
 ## Requisitos do projeto
 
 A seguir estão listados todos os requisitos do projeto. Lembre-se que para a avaliação utilizaremos testes por mutação, então cada requisito só será aceito se os testes tiverem comportamento adequado tanto na aplicação original como na modificada.
 
-Todos os arquivos de teste que vocês usarão **já estão préviamente criados e novos arquivos não devem ser criados**. Como exemplo colocamos um teste dentro do arquivo `src/tests/App.test.js`. Além disso, **cada requisito se refere a um arquivo da aplicação da Pokedéx**. Obter aprovação num requisito significa que todos os casos de erro daquele arquivo estão cobertos, ou seja, todos os mutantes criados naquele arquivo pelo avaliador foram mortos. Nos subitens de cada requisito detalhamos o que é necessário fazer para obter a aprovação neles.
+Todos os arquivos de teste que vocês usarão **já estão previamente criados e novos arquivos não devem ser criados**. Como exemplo colocamos um teste dentro do arquivo `src/tests/App.test.js`. Além disso, **cada requisito se refere a um arquivo da aplicação da Pokédex**. Obter aprovação num requisito significa que todos os casos de erro daquele arquivo estão cobertos, ou seja, todos os mutantes criados naquele arquivo pelo avaliador foram mortos. Nos subitens de cada requisito detalhamos o que é necessário fazer para obter a aprovação neles.
 
 ### 1. Testes do arquivo App.js
 
@@ -56,7 +56,7 @@ Todos os arquivos de teste que vocês usarão **já estão préviamente criados 
 
 ### 3. Testes do arquivo FavoritePokemons.js
 
-  - Caso a pessoa não tenha pokemons favoritos, a mensagem `No favorite pokemon found`  deve aparecer na tela.
+  - Caso a pessoa não tenha pokémons favoritos, a mensagem `No favorite pokemon found` deve aparecer na tela.
 
   - A página não deve exibir nenhum card de pokémon não favoritado.
 
@@ -102,15 +102,15 @@ Todos os arquivos de teste que vocês usarão **já estão préviamente criados 
 
 ### 6. Testes do arquivo Pokemon.js
 
-  - Deve ser retornado um card com as informações de determinado pokemon;
+  - Deve ser retornado um card com as informações de determinado pokémon;
 
-  - O nome correto do pokemon deve aparecer na tela;
+  - O nome correto do pokémon deve aparecer na tela;
 
   - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`, onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida;
 
-  - A imagem deve conter um atributo `src` com a URL da imagem do pokémon. A imagem deverá ter também um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokemon;
+  - A imagem deve conter um atributo `src` com a URL da imagem do pokémon. A imagem deverá ter também um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokémon;
 
-  - O pokémon exibido na Pokedéx deve conter um link de navegação para exibir detalhes deste pokémon. O link deve possuir a URL `/pokemons/<id>`, onde `<id>` é o id do pokémon exibido;
+  - O pokémon exibido na Pokédex deve conter um link de navegação para exibir detalhes deste pokémon. O link deve possuir a URL `/pokemons/<id>`, onde `<id>` é o id do pokémon exibido;
 
   - Ao clicar no link de navegação do pokémon, a aplicação deve ser redirecionada para a página de detalhes de pokémon. A URL exibida no navegador deve mudar para `/pokemon/<id>`, onde `<id>` é o id do pokémon cujos detalhes se deseja ver;
 
@@ -122,9 +122,9 @@ Todos os arquivos de teste que vocês usarão **já estão préviamente criados 
 
 ### Testes do arquivo PokemonDetails.js
 
-  - Deve conter mais informações sobre apenas o pokemon selecionado;
+  - Deve conter mais informações sobre apenas o pokémon selecionado;
 
-  - A página deve conter um texto`<name> Details`, onde `<name>` é o nome do pokemon;
+  - A página deve conter um texto `<name> Details`, onde `<name>` é o nome do pokémon;
 
   - O pokémon exibido na página de detalhes não deve conter um link de navegação para exibir detalhes deste pokémon;
 
@@ -134,7 +134,7 @@ Todos os arquivos de teste que vocês usarão **já estão préviamente criados 
 
   - A página de detalhes deve exibir uma seção com os mapas com as localizações do pokémon
 
-      - A seção de detalhes deve conter um heading `h2` com o texto `Game Locations of <name>`, , onde `<name>` é o nome do pokemon exibido;
+      - A seção de detalhes deve conter um heading `h2` com o texto `Game Locations of <name>`, , onde `<name>` é o nome do pokémon exibido;
 
       - A seção de detalhes deve exibir todas as localizações do pokémon;
 
@@ -152,7 +152,7 @@ Todos os arquivos de teste que vocês usarão **já estão préviamente criados 
 
 ## Quer fazer mais? Temos algumas sugestões!
 
-O que temos a seguir não são requisitos bônus - são idéias para você se aprofundar mais no projeto e **aprender mais!** Que tal trabalhar neles? Começamos com algo bem direto:
+O que temos a seguir não são requisitos bônus - são ideias para você se aprofundar mais no projeto e **aprender mais!** Que tal trabalhar neles? Começamos com algo bem direto:
 
   - A cobertura de testes deve ser 100%
 
@@ -211,9 +211,9 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-block16-react-tests.git`.
+  * `git clone git@github.com:tryber/sd-0x-block16-project-react-testing-library.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-block16-react-tests`
+    * `cd sd-0x-block16-project-react-testing-library`
 
 2. Instale as dependências
   * `npm install`
@@ -230,7 +230,7 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
 4. Adicione um teste para algum dos requisitos do projeto. Por exemplo, para o requisito #1, adicione em `App.test.js`:
 
 ```javascript
-test('shows the Pokedéx when the route is `/`', () => {
+test('shows the Pokédex when the route is `/`', () => {
   const { getByText } = render(
     <MemoryRouter initialEntries={['/']}>
       <App />
@@ -257,13 +257,13 @@ test('shows the Pokedéx when the route is `/`', () => {
   * Usando o exemplo anterior: `git push -u origin joaozinho-react-testing`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-block16-react-tests/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-block16-project-react-testing-library/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-block16-react-tests/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-block16-project-react-testing-library/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
