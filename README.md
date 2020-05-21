@@ -24,7 +24,7 @@ A seguir estão listados todos os requisitos do projeto. Lembre-se que para a av
 
 Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos um teste dentro do arquivo `src/tests/App.test.js`.
 
-### APP
+### APP mutation test
 
   - Ao carregar a aplicação no caminho de URL “/”, a página principal da Pokédex deve ser mostrada.
 
@@ -44,7 +44,7 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
   - Entrar em uma URL desconhecida exibe a página `Not Found`
 
-### About
+### About mutation test
 
   - A página "About" deve exibir informações sobre a Pokédex
 
@@ -54,7 +54,7 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
   - A página deve conter a seguinte imagem de uma Pokédex: `https://cdn.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png`.
 
-### FavoritePokemons
+### FavoritePokemons mutation test
 
   - Caso a pessoa não tenha pokemons favoritos, a mensagem `No favorite pokemon found`  deve aparecer na tela.
 
@@ -62,13 +62,13 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
   - A página deve exibir todos os cards de pokémons favoritados;
 
-### NotFound
+### NotFound mutation test
 
   - A página deve conter um heading `h2` com o texto `Page requested not found 😭`;
 
   - A página deve exibir a imagem `https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif`.
 
-### Pokedex
+### Pokedex mutation test
 
   - Ao apertar o botão de próximo, a página deve exibir o próximo pokémon da lista
 
@@ -101,7 +101,7 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
   - O botão de `Próximo pokémon` deve ser desabilitado se a lista filtrada de pokémons tiver um só pokémon
 
-### Pokemon
+### Pokemon mutation test
 
   - Deve ser retornado um card com as informações de determinado pokemon;
 
@@ -121,7 +121,7 @@ Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos u
 
     - A imagem deve ter o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do pokémon cujos detalhes estão sendo exibidos.
 
-### PokemonDetails
+### PokemonDetails mutation test
 
   - Deve conter mais informações sobre apenas o pokemon selecionado;
 
