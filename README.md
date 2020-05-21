@@ -12,111 +12,41 @@ Nesse projeto você escreverá testes para uma aplicação React.
 
 Este repositório já contém um _template_ de uma aplicação React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você não precisará realizar nenhuma configuração adicional. Você deverá utilizar [`Jest`](https://jestjs.io/) e a biblioteca [`React Testing Library`](https://testing-library.com/) (também já instaladas e configuradas) para escrever os testes. Note que o _template_ contém uma implementação completa de todos os requisitos da Pokédex. Seu trabalho será, para cada requisito ou sub-requisito listado a seguir, escrever ao menos um teste que garanta sua corretude. Cuidado com [testes _falsos positivos_](https://talkingabouttesting.com/2015/08/04/falsos-negativos-falsos-positivos-verdadeiros-negativos-e-verdadeiros-positivos/). Falsos positivos serão desconsiderados na avaliação.
 
+### Testando os testes
+
+  - Para que seus testes sejam avaliados, utilizaremos o [`Stryker`](https://stryker-mutator.io/). Ao terminar de formular seus testes, antes de seu PR final, utilize o comando `stryker run` para rodar os testes de mutação. Para ter seu projeto avaliado, o `Mutation Score` deve ser de 100%, qualquer valor abaixo disso, o PR não será avaliado.
+
+  - Obs: **Mutation Tests** estão sendo usados aqui para testar os testes 🤔. Eles funcionam da seguinte forma: são criadas versões alternativas(mutantes) do código da aplicação com mutações(variações) em seu conteúdo que podem não estar sendo contempladas pelos testes. Se o teste _não_ acusa(passa) aquela versão mutante como incorreta, dizemos que ela sobreviveu, enquanto se o teste acusa, dizemos que ela foi eliminada.
+
 ## Requisitos do projeto
 
-A seguir estão listados todos os requisitos do projeto. Lembre-se: Cada requisito deve ser mapeado para **pelo menos** um teste. **Todos** os sub-requisitos devem também ser testados, ao menos uma vez.
+A seguir estão listados todos os requisitos do projeto. Lembre-se que para a avaliação utilizaremos testes por mutação, então, cada requisito só será aceito se os testes tiverem comportamento adequado na aplicação tanto original como modificada.
 
-### 1 - Ao carregar a aplicação no caminho de URL “/”, a página principal da Pokédex deve ser mostrada.
+Coloque seus testes dentro dos arquivos na pasta tests. Como exemplo colocamos um teste dentro do arquivo `src/tests/App.test.js`.
 
-### 2 - A Pokédex deve exibir apenas um pokémon por vez
+### APP
 
-### 3 - Ao apertar o botão de próximo, a página deve exibir o próximo pokémon da lista
+  - Ao carregar a aplicação no caminho de URL “/”, a página principal da Pokédex deve ser mostrada.
 
-  - O botão deve conter o texto `Próximo pokémon`;
+  - No topo da aplicação, deve haver um conjunto fixo de links de navegação
 
-  - Cliques sucessivos no botão devem mostrar o próximo pokémon da lista;
+    - O primeiro link deve possuir o texto `Home` com a URL `/`;
 
-  - Ao se chegar ao último pokémon da lista, a Pokédex deve voltar para o primeiro pokémon no apertar do botão.
+    - O segundo link deve possuir o texto `About` com a URL `/about`;
 
-### 4 - A Pokédex deve conter botões de filtro
+    - O terceiro link deve possuir o texto `Favorite Pokémons` com a URL `/favorites`.
 
-  - A partir da seleção de um botão de tipo, a Pokédex deve circular somente pelos pokémons daquele tipo;
+  - Ao clicar no link "Home" na barra de navegação, a aplicação deve ser redirecionada para a página inicial, na URL "/"
 
-  - O texto do botão deve ser o nome do tipo, p. ex. `Psychic`.
+  - Ao clicar no link "About" na barra de navegação, a aplicação deve ser redirecionada para a página de `About`, na URL "/about"
 
-### 5 - A Pokédex deve conter um botão para resetar o filtro
+  - Ao clicar no link "Favorite Pokémons" na barra de navegação, a aplicação deve ser redirecionada para a página de pokémons favoritados, na URL "/favorites"
 
-  - O texto do botão deve ser `All`;
+  - Entrar em uma URL desconhecida exibe a página `Not Found`
 
-  - Após clicá-lo, a Pokédex deve voltar a circular por todos os pokémons;
+### About
 
-  - Quando a página carrega, o filtro selecionado deve ser o `All`.
-
-### 6 - A Pokédex deve gerar, dinamicamente, um botão de filtro para cada tipo de pokémon
-
-  - Os botões de filtragem devem ser dinâmicos: sua Pokédex deve gerar um botão de filtragem para cada tipo de pokémon disponível nos dados independente de quais ou quantos sejam, sem repetição de tipos. Ou seja, se sua Pokédex possui pokémons do tipo `Fire`, `Psychic`, `Electric` e `Normal`, deve aparecer como opção de filtro um botão para cada um desses tipos. Além disso, ela deve manter o botão `All`.
-
-### 7 - O botão de `Próximo pokémon` deve ser desabilitado se a lista filtrada de pokémons tiver um só pokémon
-
-### 8 - A Pokedéx deve exibir o nome, tipo, peso médio e imagem do pokémon exibido
-
-  - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`, onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida;
-
-  - A imagem deve conter um atributo `src` com a URL da imagem do pokémon. A imagem deverá ter também um atributo `alt` com o nome do pokémon.
-
-### 9 - O pokémon exibido na Pokedéx deve conter um link de navegação para exibir detalhes deste pokémon
-
-  - O link deve possuir a URL `/pokemons/<id>`, onde `<id>` é o id do pokémon exibido.
-
-### 10 - Ao clicar no link de navegação do pokémon, a aplicação deve ser redirecionada para a página de detalhes de pokémon
-
-  - A URL exibida no navegador deve mudar para `/pokemon/<id>`, onde `<id>` é o id do pokémon cujos detalhes se deseja ver.
-
-### 11 - A página de detalhes de pokémon deve exibir o nome, tipo, peso médio e imagem do pokémon exibido
-
-  - O nome do pokemon deve vir no formato `<name> Details`, onde `<name>` é o nome do pokemon;
-
-  - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`, onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida;
-
-  - A imagem deve conter um atributo `src` com a URL da imagem do pokémon. A imagem deverá ter também um atributo `alt` com o nome do pokémon.
-
-### 12 - O pokémon exibido na página de detalhes não deve conter um link de navegação para exibir detalhes deste pokémon
-
-### 13 - A página de detalhes deve exibir uma seção com um resumo do pokémon
-
-  - A seção de detalhes deve conter um heading `h2` com o texto `Summary`;
-
-  - A seção de detalhes deve conter um parágrafo com o resumo do pokémon específico sendo visualizado.
-
-### 14 - A página de detalhes deve exibir uma seção com os mapas com as localizações do pokémon
-
-  - A seção de detalhes deve conter um heading `h2` com o texto `Game Locations of <pokémon>`, onde `<pokémon>` é o nome do pokémon exibido;
-
-  - A seção de detalhes deve exibir todas as localizações do pokémon;
-
-  - Cada localização deve exibir o nome da localização e uma imagem do mapa da localização;
-
-  - A imagem da localização deve ter um atributo `src` com a URL da localização;
-
-  - A imagem da localização deve ter um atributo `alt` com o texto `<name> location`, onde `<name>` é o nome do pokémon.
-
-### 15 - A página de detalhes deve permitir favoritar um pokémon
-
-  - A página deve conter um checkbox que permita favoritar um pokémon. Cliques no checkbox devem, alternadadamente, adicionar e remover o pokémon da lista de favoritos;
-
-  - O label do checkbox deve ser `Pokémon favoritado?`.
-
-### 16 - Pokémons favoritados devem exibir um ícone de uma estrela
-
-  - O ícone deve ser uma imagem, com o atributo `src` igual `/star-icon.svg`;
-
-  - A imagem deve ter o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do pokémon cujos detalhes estão sendo exibidos.
-
-### 17 - No topo da aplicação, deve haver um conjunto fixo de links de navegação
-
-  - O primeiro link deve possuir o texto `Home` com a URL `/`;
-
-  - O segundo link deve possuir o texto `About` com a URL `/about`;
-
-  - O terceiro link deve possuir o texto `Favorite Pokémons` com a URL `/favorites`.
-
-### 18 - Ao clicar no link "Home" na barra de navegação, a aplicação deve ser redirecionada para a página inicial, na URL "/"
-
-### 19 - Ao clicar no link "About" na barra de navegação, a aplicação deve ser redirecionada para a página de `About`, na URL "/about"
-
-### 20 - Ao clicar no link "Favorite Pokémons" na barra de navegação, a aplicação deve ser redirecionada para a página de pokémons favoritados, na URL "/favorites"
-
-### 21 - A página "About" deve exibir informações sobre a Pokédex
+  - A página "About" deve exibir informações sobre a Pokédex
 
   - A página deve conter um heading `h2` com o texto `About Pokédex`;
 
@@ -124,75 +54,155 @@ A seguir estão listados todos os requisitos do projeto. Lembre-se: Cada requisi
 
   - A página deve conter a seguinte imagem de uma Pokédex: `https://cdn.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png`.
 
-### 22 - A página de pokémon favoritos deve exibir os pokémons favoritos
+### FavoritePokemons
 
-  - A página deve exibir todos os pokémons favoritados;
+  - Caso a pessoa não tenha pokemons favoritos, a mensagem `No favorite pokemon found`  deve aparecer na tela.
 
-  - A página não deve exibir nenhum pokémon não favoritado.
+  - A página não deve exibir nenhum card de pokémon não favoritado.
 
-### 23 - Entrar em uma URL desconhecida exibe a página `Not Found`
+  - A página deve exibir todos os cards de pokémons favoritados;
+
+### NotFound
 
   - A página deve conter um heading `h2` com o texto `Page requested not found 😭`;
 
   - A página deve exibir a imagem `https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif`.
 
-### 24 - A cobertura de testes deve ser 100%
+### Pokedex
 
-  - Para ver a cobertura de testes, execute no terminal o comando `npm run test-coverage`.
+  - Ao apertar o botão de próximo, a página deve exibir o próximo pokémon da lista
 
-### 25 - Testando os testes
+    - O botão deve conter o texto `Próximo pokémon`;
 
-  - Para que seus testes sejam avaliados, utilizaremos o [`Stryker`](https://stryker-mutator.io/). Ao terminar de formular seus testes, antes de seu PR final, utilize o comando `stryker run` para rodar os testes de mutação. Para ter seu projeto avaliado, o `Mutation Score` deve ser de 100%, qualquer valor abaixo disso, o PR não será avaliado.
+    - Cliques sucessivos no botão devem mostrar o próximo pokémon da lista;
 
-  - Obs: **Mutation Tests** estão sendo usados aqui para testar os testes 🤔. Eles funcionam da seguinte forma: são criadas versões alternativas(mutantes) do código da aplicação com mutações(variações) em seu conteúdo que podem não estar sendo contempladas pelos testes. Se o teste _não_ acusa(passa) aquela versão mutante como incorreta, dizemos que ela sobreviveu, enquanto se o teste acusa, dizemos que ela foi eliminada.
+    - Ao se chegar ao último pokémon da lista, a Pokédex deve voltar para o primeiro pokémon no apertar do botão.
 
-## BÔNUS
+  
+  - A Pokédex deve exibir apenas um pokémon por vez
+
+  - A Pokédex deve conter botões de filtro
+
+    - A partir da seleção de um botão de tipo, a Pokédex deve circular somente pelos pokémons daquele tipo;
+
+    - O texto do botão deve ser o nome do tipo, p. ex. `Psychic`.
+
+  - A Pokédex deve conter um botão para resetar o filtro
+
+    - O texto do botão deve ser `All`;
+
+    - Após clicá-lo, a Pokédex deve voltar a circular por todos os pokémons;
+
+    - Quando a página carrega, o filtro selecionado deve ser o `All`.
+
+  - A Pokédex deve gerar, dinamicamente, um botão de filtro para cada tipo de pokémon
+
+    - Os botões de filtragem devem ser dinâmicos: sua Pokédex deve gerar um botão de filtragem para cada tipo de pokémon disponível nos dados independente de quais ou quantos sejam, sem repetição de tipos. Ou seja, se sua Pokédex possui pokémons do tipo `Fire`, `Psychic`, `Electric` e `Normal`, deve aparecer como opção de filtro um botão para cada um desses tipos. Além disso, ela deve manter o botão `All`.
+
+  - O botão de `Próximo pokémon` deve ser desabilitado se a lista filtrada de pokémons tiver um só pokémon
+
+### Pokemon
+
+  - Deve ser retornado um card com as informações de determinado pokemon;
+
+  - O nome correto do pokemon deve aparecer na tela;
+
+  - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`, onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida;
+
+  - A imagem deve conter um atributo `src` com a URL da imagem do pokémon. A imagem deverá ter também um atributo `alt` com o texto `<name> sprite`, , onde `<name>` é o nome do pokemon;
+
+  - O pokémon exibido na Pokedéx deve conter um link de navegação para exibir detalhes deste pokémon. O link deve possuir a URL `/pokemons/<id>`, onde `<id>` é o id do pokémon exibido;
+
+  - Ao clicar no link de navegação do pokémon, a aplicação deve ser redirecionada para a página de detalhes de pokémon. A URL exibida no navegador deve mudar para `/pokemon/<id>`, onde `<id>` é o id do pokémon cujos detalhes se deseja ver;
+
+  - Pokémons favoritados devem exibir um ícone de uma estrela
+
+    - O ícone deve ser uma imagem, com o atributo `src` igual `/star-icon.svg`;
+
+    - A imagem deve ter o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do pokémon cujos detalhes estão sendo exibidos.
+
+### PokemonDetails
+
+  - Deve conter mais informações sobre apenas o pokemon selecionado;
+
+  - A página deve conter um texto`<name> Details`, onde `<name>` é o nome do pokemon;
+
+  - O pokémon exibido na página de detalhes não deve conter um link de navegação para exibir detalhes deste pokémon;
+
+  - A seção de detalhes deve conter um heading `h2` com o texto `Summary`;
+
+  - A seção de detalhes deve conter um parágrafo com o resumo do pokémon específico sendo visualizado;
+
+  - A página de detalhes deve exibir uma seção com os mapas com as localizações do pokémon
+
+      - A seção de detalhes deve conter um heading `h2` com o texto `Game Locations of <name>`, , onde `<name>` é o nome do pokemon exibido;
+
+      - A seção de detalhes deve exibir todas as localizações do pokémon;
+
+      - Cada localização deve exibir o nome da localização e uma imagem do mapa da localização;
+
+      - A imagem da localização deve ter um atributo `src` com a URL da localização;
+
+      - A imagem da localização deve ter um atributo `alt` com o texto `<name> location`, onde `<name>` é o nome do pokémon.
+
+  - A página de detalhes deve permitir favoritar um pokémon
+
+    - A página deve conter um checkbox que permita favoritar um pokémon. Cliques no checkbox devem, alternadadamente, adicionar e remover o pokémon da lista de favoritos;
+
+    - O label do checkbox deve ser `Pokémon favoritado?`.
+
+## Requisitos EXTRAS (Opcional)
+
+  - A cobertura de testes deve ser 100%
+
+    - Para ver a cobertura de testes, execute no terminal o comando `npm run test-coverage`.
+
 
 A Pokédex é uma aplicação estática, com seus dados pré-definidos. Utilizando a [PokéAPI](https://pokeapi.co/), é possível deixá-la mais dinâmica e realista.
 
 Implemente os requisitos propostos a seguir e escreva testes para eles. Tente manter sempre a cobertura de testes em 100%, garantindo assim que não há código ou fluxos lógicos não testados. Para um desafio adicional, tente utilizar TDD - escreva os testes à medida que for implementando os requisitos.
 
-### 25 - Adicione uma rota para exibir uma lista de localizações
+  - Adicione uma rota para exibir uma lista de localizações
 
-  - A URL da rota deve ser `/locations`;
+    - A URL da rota deve ser `/locations`;
 
-  - A página deve exibir uma lista com as localizações retornadas pela PokéAPI. Você pode ler [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) e [aqui](https://pokeapi.co/docs/v2.html/#locations-section) como utilizar a PokéAPI para buscar uma lista de localizações.
+    - A página deve exibir uma lista com as localizações retornadas pela PokéAPI. Você pode ler [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) e [aqui](https://pokeapi.co/docs/v2.html/#locations-section) como utilizar a PokéAPI para buscar uma lista de localizações.
 
-### 26 - Adicione na barra de navegação um link para a lista de localizações
+  - Adicione na barra de navegação um link para a lista de localizações
 
-  - O link deve conter o texto `Locations`;
+    - O link deve conter o texto `Locations`;
 
-  - Ao clicar no link, a página com a lista de localizações deve ser exibida.
+    - Ao clicar no link, a página com a lista de localizações deve ser exibida.
 
-### 27 - Adicione botões de paginação na lista de localizações
+  - Adicione botões de paginação na lista de localizações
 
-Por default, os _endpoints_ da PokéAPI retornam no máximo 20 resultados. Utilizando os parâmetros `limit` e `offset`, você pode especificar qual página deseja buscar e qual seu tamanho. Veja [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) como utilizar estes parâmetros.
+  Por default, os _endpoints_ da PokéAPI retornam no máximo 20 resultados. Utilizando os parâmetros `limit` e `offset`, você pode especificar qual página deseja buscar e qual seu tamanho. Veja [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) como utilizar estes parâmetros.
 
-  - Adicone dois botões "Anterior" e "Próxima" que permitam navegar entre as página da lista de localizações;
+    - Adicone dois botões "Anterior" e "Próxima" que permitam navegar entre as página da lista de localizações;
 
-  - Na primeira página, o botão "Anterior" deve ser desabilitado. Da mesma forma, ao alcançar a última página, o botão "Próximo" deve ser desabilitado.
+    - Na primeira página, o botão "Anterior" deve ser desabilitado. Da mesma forma, ao alcançar a última página, o botão "Próximo" deve ser desabilitado.
 
-### 28 - Adiciona uma rota para exibir uma lista de gerações
+  - Adiciona uma rota para exibir uma lista de gerações
 
-  - A URL da rota deve ser `/generations`;
+    - A URL da rota deve ser `/generations`;
 
-  - A página deve exibir uma lista com as gerações retornadas pela PokéAPI. Você pode ler [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) e [aqui](https://pokeapi.co/docs/v2.html/#generations) como utilizar a PokéAPI para buscar uma lista de gerações.
+    - A página deve exibir uma lista com as gerações retornadas pela PokéAPI. Você pode ler [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) e [aqui](https://pokeapi.co/docs/v2.html/#generations) como utilizar a PokéAPI para buscar uma lista de gerações.
 
-### 29 - Adicione na barra de navegação um link para a lista de gerações
+  - Adicione na barra de navegação um link para a lista de gerações
 
-  - O link deve conter o texto `Generations`;
+    - O link deve conter o texto `Generations`;
 
-  - Ao clicar no link, a página com a lista de gerações deve ser exibida.
+    - Ao clicar no link, a página com a lista de gerações deve ser exibida.
 
-### 30 - Adicione uma rota para exibir informações sobre uma geração
+  - Adicione uma rota para exibir informações sobre uma geração
 
-  - A URL da rota deve ser `/generations/<id>`, onde `<id>` é o id da geração exibida;
+    - A URL da rota deve ser `/generations/<id>`, onde `<id>` é o id da geração exibida;
 
-  - A página deve exibir, após buscar na PokéAPI, o nome da geração e uma lista com os nomes dos pokémons introduzidos nesta geração.
+    - A página deve exibir, após buscar na PokéAPI, o nome da geração e uma lista com os nomes dos pokémons introduzidos nesta geração.
 
-### 31 - Adicione a cada geração na lista de gerações um link para a página de detalhes desta geração
+  - Adicione a cada geração na lista de gerações um link para a página de detalhes desta geração
 
-  - Ao clicar no link, a página com informações sobre a geração clicada deve ser exibida.
+    - Ao clicar no link, a página com informações sobre a geração clicada deve ser exibida.
 
 ---
 
