@@ -45,8 +45,8 @@ class App extends Component {
 
     return (
       <Pokedex
-        pokemons={pokemons}
-        isPokemonFavoriteById={isPokemonFavoriteById}
+        pokemons={ pokemons }
+        isPokemonFavoriteById={ isPokemonFavoriteById }
       />
     );
   }
@@ -56,12 +56,12 @@ class App extends Component {
 
     return (
       <PokemonDetails
-        isPokemonFavoriteById={isPokemonFavoriteById}
-        match={match}
-        pokemons={pokemons}
-        onUpdateFavoritePokemons={(pokemonId, isFavorite) => (
+        isPokemonFavoriteById={ isPokemonFavoriteById }
+        match={ match }
+        pokemons={ pokemons }
+        onUpdateFavoritePokemons={ (pokemonId, isFavorite) => (
           this.onUpdateFavoritePokemons(pokemonId, isFavorite)
-        )}
+        ) }
       />
     );
   }
@@ -75,15 +75,18 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={({ match }) => this.renderPokedex(match)}
+          render={ ({ match }) => this.renderPokedex(match) }
         />
         <Route
           path="/pokemons/:id"
-          render={({ match }) => this.renderPokemonDetails(match)}
+          render={ ({ match }) => this.renderPokemonDetails(match) }
         />
-        <Route path="/favorites" render={() => <FavoritePokemons pokemons={favoritePokemons} />} />
-        <Route path="/about" component={About} />
-        <Route component={NotFound} />
+        <Route
+          path="/favorites"
+          render={ () => <FavoritePokemons pokemons={ favoritePokemons } /> }
+        />
+        <Route path="/about" component={ About } />
+        <Route component={ NotFound } />
       </Switch>
     );
   }
@@ -93,9 +96,9 @@ class App extends Component {
       <div className="App">
         <h1>Pokédex</h1>
         <nav>
-          <Link className="link" to="/">{`Home`}</Link>
-          <Link className="link" to="/about">{`About`}</Link>
-          <Link className="link" to="/favorites">{`Favorite Pokémons`}</Link>
+          <Link className="link" to="/">Home</Link>
+          <Link className="link" to="/about">About</Link>
+          <Link className="link" to="/favorites">Favorite Pokémons</Link>
         </nav>
         {this.renderRoutes()}
       </div>

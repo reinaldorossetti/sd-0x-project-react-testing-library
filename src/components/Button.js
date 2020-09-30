@@ -10,9 +10,9 @@ const Button = ({
   onClick,
 }) => (
   <button
-    onClick={onClick}
-    className={`button-text ${className}`}
-    disabled={disabled}
+    onClick={ onClick }
+    className={ `button-text ${className}` }
+    disabled={ disabled }
     type="button"
   >
     {children}
