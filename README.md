@@ -70,6 +70,8 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
 ### 5. Testes do arquivo Pokedex.js
 
+  - A página deve conter um heading `h2` com o texto `Encountered pokémons`;
+
   - Ao apertar o botão de próximo, a página deve exibir o próximo pokémon da lista
 
     - O botão deve conter o texto `Próximo pokémon`;
