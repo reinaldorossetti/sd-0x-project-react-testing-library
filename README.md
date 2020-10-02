@@ -1,3 +1,5 @@
+Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
+
 # Boas vindas ao repositório do projeto de testes com a React Testing Library!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
@@ -15,6 +17,10 @@ Nesse projeto você escreverá testes para uma aplicação React.
 ## Desenvolvimento
 
 Este repositório já contém uma aplicação React criada e configurada. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você não precisará realizar nenhuma configuração adicional. Você deverá utilizar [`Jest`](https://jestjs.io/) e a biblioteca [`React Testing Library`](https://testing-library.com/) (também já instaladas e configuradas) para escrever os testes. Note que a aplicação contém uma implementação completa de todos os requisitos da Pokédex. Seu trabalho será, para cada requisito listado a seguir, escrever testes que garantam sua corretude. Cuidado com [testes _falsos positivos_](https://talkingabouttesting.com/2015/08/04/falsos-negativos-falsos-positivos-verdadeiros-negativos-e-verdadeiros-positivos/). Falsos positivos serão desconsiderados na avaliação.
+
+### Data de entrega
+
+O projeto deverá ser entregue até a seguinte data para a avaliação final: ``DD/MM/YYYY - 00:00h``.
 
 ### Quem testa os testes?
 
@@ -34,11 +40,11 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se o topo da aplicação contém um conjunto fixo de links de navegação
 
-    - Verifique se o primeiro link possui o texto `Home` com a URL `/`;
+    - O primeiro link deve possuir o texto `Home` com a URL `/`;
 
-    - Verifique se o segundo link possui o texto `About` com a URL `/about`;
+    - O segundo link deve possuir o texto `About` com a URL `/about`;
 
-    - Verifique se o terceiro link possui o texto `Favorite Pokémons` com a URL `/favorites`.
+    - O terceiro link deve possuir o texto `Favorite Pokémons` com a URL `/favorites`.
 
   - Teste se a aplicação é redirecionada para a página inicial, na URL `/` ao clicar no link `Home` da barra de navegação. 
 
@@ -76,37 +82,37 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se é exibido o próximo Pokémon da lista quando o botão `Próximo pokémon` é clicado.
 
-    - Verifique se o botão contém o texto `Próximo pokémon`;
+    - O botão deve conter o texto `Próximo pokémon`;
 
-    - Verifique se os próximos Pokémons da lista são mostrados, um a um, ao clicar sucessivamente no botão.
+    - Os próximos Pokémons da lista devem ser mostrados, um a um, ao clicar sucessivamente no botão.
 
-    - Verifique se o primeiro Pokémon da lista é mostrado ao clicar no botão se estiver no último Pokémon da lista.
+    - O primeiro Pokémon da lista deve ser mostrado ao clicar no botão se estiver no último Pokémon da lista.
 
   - Teste se é mostrado apenas um Pokémon por vez.
 
   - Teste se a Pokédex tem os botões de filtro
 
-    - Verifique se somente os Pokémons do tipo selecionado através do `botão de tipo` estão circulados.
+    - Os Pokémons do tipo selecionado através do `botão de tipo` devem estar circulados.
 
-    - Verifique se o texto do botão é o `nome do tipo`, ex. `Psychic`.
+    - O texto do botão deve corresponder ao `nome do tipo`, ex. `Psychic`.
 
   - Teste se a Pokédex contém um botão para resetar o filtro
 
-    - Verifique se o texto do botão é `All`.
+    - O texto do botão deve ser `All`.
 
-    - Verifique se a Pokedéx volta a circular por todos os Pokémons quando o botão for clicado.
+    - A Pokedéx deverá voltar a circular por todos os Pokémons quando o botão for clicado.
 
-    - Verifique se, ao carregar a página, o filtro selecionado seja `All`.
+    - Ao carregar a página, o filtro selecionado deverá ser `All`.
 
   - Teste se é criado, dinamicamente, um botão de filtro para cada tipo de Pokémon.
 
-    - Verifique se os botões de filtragem estão dinâmicos.
+    - Os botões de filtragem devem ser dinâmicos.
 
-    - Verifique se existe um botão de filtragem para cada tipo de Pokémon disponível nos dados, independente de quais ou quantos sejam, sem repetição de tipos. Ou seja, confira se a sua Pokédex possui pokémons do tipo `Fire`, `Psychic`, `Electric` e `Normal`.
+    - Deve existir um botão de filtragem para cada tipo de Pokémon disponível nos dados, independente de quais ou quantos sejam, sem repetição de tipos. Ou seja, a sua Pokédex deve possuir pokémons do tipo `Fire`, `Psychic`, `Electric` e `Normal`.
     
-    - Verifique se é mostrado como opção de filtro um botão para cada um dos tipos. Além disso, o botão `All` deve estar sempre visível.
+    - Deve ser mostrado como opção de filtro, um botão para cada um dos tipos. Além disso, o botão `All` precisa estar sempre visível.
 
-  - Teste se o botão de `Próximo pokémon` está desabilitado quando a lista filtrada de Pokémons tiver apenas um pokémon.
+  - O botão de `Próximo pokémon` deverá estar desabilitado quando a lista filtrada de Pokémons tiver apenas um pokémon.
 
 ### 6. Testando o arquivo Pokemon.js
 
@@ -126,9 +132,9 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se existe um ícone de estrela nos Pokémons favoritados.
 
-    - Verifique se o ícone é uma imagem com o atributo `src` contendo o caminho `/star-icon.svg`;
+    - O ícone deve ser uma imagem com o atributo `src` contendo o caminho `/star-icon.svg`;
 
-    - Verifique se a imagem tem o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do Pokémon exibido.
+    - A imagem deve ter o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do Pokémon exibido.
 
 ### Testando o arquivo PokemonDetails.js
 
@@ -144,22 +150,22 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se existe na página uma seção com os mapas contendo as localizações do pokémon
 
-    - Verifique se contém, na seção de detalhes, um heading `h2` com o texto `Game Locations of <name>`; onde `<name>` é o nome do Pokémon exibido.
+    - Deverá conter, na seção de detalhes, um heading `h2` com o texto `Game Locations of <name>`; onde `<name>` é o nome do Pokémon exibido.
 
-    - Verifique se todas as localizações do Pokémon são mostradas na seção de detalhes;
+    - Todas as localizações do Pokémon devem ser mostradas na seção de detalhes;
 
-    - Verifique se são exibidos o nome da localização e uma imagem do mapa em cada localização.
+    - Devem ser exibidos, o nome da localização e uma imagem do mapa em cada localização.
 
-    - Verifique se a imagem da localização tem um atributo `src` com a URL da localização.
+    - A imagem da localização deve ter um atributo `src` com a URL da localização.
 
-    - Verifique se a imagem a imagem da localização tem um atributo `alt` com o texto `<name> location`, onde `<name>` é o nome do Pokémon.
+    - A imagem da localização deve ter um atributo `alt` com o texto `<name> location`, onde `<name>` é o nome do Pokémon.
 
   - Teste se o usuário pode favoritar um pokémon através da página de detalhes
 
-    - Verifique se a página exibe um checkbox que permite favoritar o Pokémon.
-    - Verifique se os cliques alternados no checkbox adicionam e removem o Pokémon da lista de favoritos.
+    - A página deve exibir um checkbox que permite favoritar o Pokémon.
+    - Cliques alternados no checkbox devem adicionar e remover o Pokémon da lista de favoritos.
 
-    - Verifique se o label do checkbox é `Pokémon favoritado?`.
+    - O label do checkbox deve conter o texto `Pokémon favoritado?`.
 
 ## Quer fazer mais? Temos algumas sugestões!
 
@@ -303,6 +309,16 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
   * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+#### ENTREGA
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+
+Link: [INSERIR LINK]
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
 
