@@ -8,7 +8,17 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ## Neste projeto, verificamos se você é capaz de:
 
-1. Realizar testes automatizados das suas aplicações em React usando o `Jest` e o `React Testing Library` (RTL)
+* Utilizar os seletores (queries) da React-Testing-Library em testes automatizados.
+
+* Simular eventos com a React-Testing-Library em testes automatizados.
+
+* Testar fluxos lógicos assíncronos com a React-Testing-Library.
+
+* Escrever testes que permitam a refatoração da estrutura dos componentes da aplicação sem necessidade de serem alterados.
+
+* Criar mocks de APIs utilizando fetch.
+
+* Testar inputs.
 
 ## O que deverá ser desenvolvido
 
@@ -112,17 +122,17 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
     
     - Deve ser mostrado como opção de filtro, um botão para cada um dos tipos. Além disso, o botão `All` precisa estar sempre visível.
 
-  - O botão de `Próximo pokémon` deverá estar desabilitado quando a lista filtrada de Pokémons tiver apenas um pokémon.
+  - O botão de `Próximo pokémon` deve ser desabilitado quando a lista filtrada de Pokémons tiver um só pokémon.
 
 ### 6. Testando o arquivo Pokemon.js
 
-  - Teste se é msotrado um card com as informações de determinado pokémon.
+  - Teste se é renderizado um card com as informações de determinado pokémon.
 
-  - Teste se o nome correto do Pokémon é mostrado na tela.
+    - O nome correto do Pokémon deve ser mostrado na tela.
 
-  - Teste se o peso médio do pokémon é exibido com um texto no formato `Average weight: <value> <measurementUnit>`; onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida.
+    - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`; onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida.
 
-  - Teste se a imagem do Pokémon é exibida. Ela deve conter um atributo `src` com a URL da imagem e um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokémon.
+    - A imagem do Pokémon deve ser exibida. Ela deve conter um atributo `src` com a URL da imagem e um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokémon.
 
   - Teste se o card do Pokémon indicado na Pokédex contém um link de navegação para exibir detalhes deste Pokémon. O link deve possuir a URL `/pokemons/<id>`, onde `<id>` é o id do Pokémon exibido;
 
@@ -140,13 +150,13 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se as informações detalhadas do Pokémon selecionado são mostradas na tela.
 
-  - Teste se a página contém um texto `<name> Details`, onde `<name>` é o nome do Pokémon;
+    - A página deve conter um texto `<name> Details`, onde `<name>` é o nome do Pokémon;
 
-  - Teste se **Não** há o link de navegação para os detalhes do Pokémon selecionado.
+    - **Não** deve existir o link de navegação para os detalhes do Pokémon selecionado.
 
-  - Teste se a seção de detalhes contém um heading `h2` com o texto `Summary`.
+    - A seção de detalhes deve conter um heading `h2` com o texto `Summary`.
 
-  - Teste se a seção de detalhes contém um parágrafo com o resumo do Pokémon específico sendo visualizado.
+    - A seção de detalhes deve conter um parágrafo com o resumo do Pokémon específico sendo visualizado.
 
   - Teste se existe na página uma seção com os mapas contendo as localizações do pokémon
 
@@ -318,7 +328,7 @@ Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência 
 
 Link: [INSERIR LINK]
 
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no _README_. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
 
