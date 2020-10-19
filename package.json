@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-coverage": "react-scripts test --coverage --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,8 +46,9 @@
     ]
   },
   "devDependencies": {
-    "@stryker-mutator/core": "^3.2.3",
-    "@stryker-mutator/javascript-mutator": "^3.2.3",
-    "@stryker-mutator/jest-runner": "^3.2.3"
+    "@babel/preset-react": "^7.12.1",
+    "@stryker-mutator/core": "^3.3.1",
+    "@stryker-mutator/javascript-mutator": "^3.3.1",
+    "@stryker-mutator/jest-runner": "^3.3.1"
   }
 }

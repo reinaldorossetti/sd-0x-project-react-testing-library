@@ -1,8 +1,24 @@
+Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
+
 # Boas vindas ao repositório do projeto de testes com a React Testing Library!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
+
+## Neste projeto, verificamos se você é capaz de:
+
+* Utilizar os seletores (queries) da React-Testing-Library em testes automatizados.
+
+* Simular eventos com a React-Testing-Library em testes automatizados.
+
+* Testar fluxos lógicos assíncronos com a React-Testing-Library.
+
+* Escrever testes que permitam a refatoração da estrutura dos componentes da aplicação sem necessidade de serem alterados.
+
+* Criar mocks de APIs utilizando fetch.
+
+* Testar inputs.
 
 ## O que deverá ser desenvolvido
 
@@ -11,6 +27,10 @@ Nesse projeto você escreverá testes para uma aplicação React.
 ## Desenvolvimento
 
 Este repositório já contém uma aplicação React criada e configurada. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você não precisará realizar nenhuma configuração adicional. Você deverá utilizar [`Jest`](https://jestjs.io/) e a biblioteca [`React Testing Library`](https://testing-library.com/) (também já instaladas e configuradas) para escrever os testes. Note que a aplicação contém uma implementação completa de todos os requisitos da Pokédex. Seu trabalho será, para cada requisito listado a seguir, escrever testes que garantam sua corretude. Cuidado com [testes _falsos positivos_](https://talkingabouttesting.com/2015/08/04/falsos-negativos-falsos-positivos-verdadeiros-negativos-e-verdadeiros-positivos/). Falsos positivos serão desconsiderados na avaliação.
+
+### Data de entrega
+
+O projeto deverá ser entregue até a seguinte data para a avaliação final: ``DD/MM/YYYY - 00:00h``.
 
 ### Quem testa os testes?
 
@@ -24,11 +44,11 @@ A seguir estão listados todos os requisitos do projeto. Lembre-se que para a av
 
 Todos os arquivos de teste que vocês usarão **já estão previamente criados e novos arquivos não devem ser criados**. Como exemplo colocamos um teste dentro do arquivo `src/tests/App.test.js`. Além disso, **cada requisito se refere a um arquivo da aplicação da Pokédex**. Obter aprovação num requisito significa que todos os casos de erro daquele arquivo estão cobertos, ou seja, todos os mutantes criados naquele arquivo pelo avaliador foram mortos. Nos subitens de cada requisito detalhamos o que é necessário fazer para obter a aprovação neles.
 
-### 1. Testes do arquivo App.js
+### 1. Testando o arquivo App.js
 
-  - Ao carregar a aplicação no caminho de URL “/”, a página principal da Pokédex deve ser mostrada.
+  - Teste se a página principal da Pokédex é renderizada ao carregar a aplicação no caminho de URL `/`.
 
-  - No topo da aplicação, deve haver um conjunto fixo de links de navegação
+  - Teste se o topo da aplicação contém um conjunto fixo de links de navegação
 
     - O primeiro link deve possuir o texto `Home` com a URL `/`;
 
@@ -36,121 +56,126 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
     - O terceiro link deve possuir o texto `Favorite Pokémons` com a URL `/favorites`.
 
-  - Ao clicar no link "Home" na barra de navegação, a aplicação deve ser redirecionada para a página inicial, na URL "/"
+  - Teste se a aplicação é redirecionada para a página inicial, na URL `/` ao clicar no link `Home` da barra de navegação. 
 
-  - Ao clicar no link "About" na barra de navegação, a aplicação deve ser redirecionada para a página de `About`, na URL "/about"
+  - Teste se a aplicação é redirecionada para a página de `About`, na URL `/about`, ao clicar no link `About` da barra de navegação. 
 
-  - Ao clicar no link "Favorite Pokémons" na barra de navegação, a aplicação deve ser redirecionada para a página de pokémons favoritados, na URL "/favorites"
+  - Teste se a aplicação é redirecionada para a página de `Pokémons Favoritados`, na URL `/favorites`, ao clicar no link `Favorite Pokémons` da barra de navegação.
 
-  - Entrar em uma URL desconhecida exibe a página `Not Found`
+  - Teste se a aplicação é redirecionada para a página `Not Found` ao entrar em uma URL desconhecida.
 
-### 2. Testes do arquivo About.js
+### 2. Testando o arquivo About.js
 
-  - A página "About" deve exibir informações sobre a Pokédex
+  - Teste se a página contém as informações sobre a Pokédex.
 
-  - A página deve conter um heading `h2` com o texto `About Pokédex`;
+  - Teste se a página contém um heading `h2` com o texto `About Pokédex`;
 
-  - A página deve conter dois parágrafos com texto sobre a Pokédex;
+  - Teste se a página contém dois parágrafos com texto sobre a Pokédex;
 
-  - A página deve conter a seguinte imagem de uma Pokédex: `https://cdn.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png`.
+  - Teste se a página contém a seguinte imagem de uma Pokédex: `https://cdn.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png`.
 
-### 3. Testes do arquivo FavoritePokemons.js
+### 3. Testando o arquivo FavoritePokemons.js
 
-  - Caso a pessoa não tenha pokémons favoritos, a mensagem `No favorite pokemon found` deve aparecer na tela.
+  - Teste se é exibido na tela a mensagem `No favorite pokemon found`, caso a pessoa não tenha pokémons favoritos.
 
-  - A página não deve exibir nenhum card de pokémon não favoritado.
+  - Teste se é exibido todos os cards de pokémons favoritados.
 
-  - A página deve exibir todos os cards de pokémons favoritados;
+  - Teste se **Não** é exibido nenhum card de pokémon não favoritado.
 
-### 4. Testes do arquivo NotFound.js
+### 4. Testando o arquivo NotFound.js
 
-  - A página deve conter um heading `h2` com o texto `Page requested not found 😭`;
+  - Teste se página contém um heading `h2` com o texto `Page requested not found 😭`;
 
-  - A página deve exibir a imagem `https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif`.
+  - Teste se página mostra a imagem `https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif`.
 
-### 5. Testes do arquivo Pokedex.js
+### 5. Testando o arquivo Pokedex.js
 
-  - A página deve conter um heading `h2` com o texto `Encountered pokémons`;
-
-  - Ao apertar o botão de próximo, a página deve exibir o próximo pokémon da lista
+  - Teste se é exibido o próximo Pokémon da lista quando o botão `Próximo pokémon` é clicado.
 
     - O botão deve conter o texto `Próximo pokémon`;
 
-    - Cliques sucessivos no botão devem mostrar o próximo pokémon da lista;
+    - Os próximos Pokémons da lista devem ser mostrados, um a um, ao clicar sucessivamente no botão.
 
-    - Ao se chegar ao último pokémon da lista, a Pokédex deve voltar para o primeiro pokémon no apertar do botão.
+    - O primeiro Pokémon da lista deve ser mostrado ao clicar no botão se estiver no último Pokémon da lista.
 
-  - A Pokédex deve exibir apenas um pokémon por vez
+  - Teste se é mostrado apenas um Pokémon por vez.
 
-  - A Pokédex deve conter botões de filtro
+  - Teste se a Pokédex tem os botões de filtro
 
-    - A partir da seleção de um botão de tipo, a Pokédex deve circular somente pelos pokémons daquele tipo;
+    - Os Pokémons do tipo selecionado através do `botão de tipo` devem estar circulados.
 
-    - O texto do botão deve ser o nome do tipo, p. ex. `Psychic`.
+    - O texto do botão deve corresponder ao `nome do tipo`, ex. `Psychic`.
 
-  - A Pokédex deve conter um botão para resetar o filtro
+  - Teste se a Pokédex contém um botão para resetar o filtro
 
-    - O texto do botão deve ser `All`;
+    - O texto do botão deve ser `All`.
 
-    - Após clicá-lo, a Pokédex deve voltar a circular por todos os pokémons;
+    - A Pokedéx deverá voltar a circular por todos os Pokémons quando o botão for clicado.
 
-    - Quando a página carrega, o filtro selecionado deve ser o `All`.
+    - Ao carregar a página, o filtro selecionado deverá ser `All`.
 
-  - A Pokédex deve gerar, dinamicamente, um botão de filtro para cada tipo de pokémon
+  - Teste se é criado, dinamicamente, um botão de filtro para cada tipo de Pokémon.
 
-    - Os botões de filtragem devem ser dinâmicos: sua Pokédex deve gerar um botão de filtragem para cada tipo de pokémon disponível nos dados independente de quais ou quantos sejam, sem repetição de tipos. Ou seja, se sua Pokédex possui pokémons do tipo `Fire`, `Psychic`, `Electric` e `Normal`, deve aparecer como opção de filtro um botão para cada um desses tipos. Além disso, ela deve manter o botão `All`.
+    - Os botões de filtragem devem ser dinâmicos.
 
-  - O botão de `Próximo pokémon` deve ser desabilitado se a lista filtrada de pokémons tiver um só pokémon
+    - Deve existir um botão de filtragem para cada tipo de Pokémon disponível nos dados, independente de quais ou quantos sejam, sem repetição de tipos. Ou seja, a sua Pokédex deve possuir pokémons do tipo `Fire`, `Psychic`, `Electric` e `Normal`.
+    
+    - Deve ser mostrado como opção de filtro, um botão para cada um dos tipos. Além disso, o botão `All` precisa estar sempre visível.
 
-### 6. Testes do arquivo Pokemon.js
+  - O botão de `Próximo pokémon` deve ser desabilitado quando a lista filtrada de Pokémons tiver um só pokémon.
 
-  - Deve ser retornado um card com as informações de determinado pokémon;
+### 6. Testando o arquivo Pokemon.js
 
-  - O nome correto do pokémon deve aparecer na tela;
+  - Teste se é renderizado um card com as informações de determinado pokémon.
 
-  - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`, onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida;
+    - O nome correto do Pokémon deve ser mostrado na tela.
 
-  - A imagem deve conter um atributo `src` com a URL da imagem do pokémon. A imagem deverá ter também um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokémon;
+    - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`; onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida.
 
-  - O pokémon exibido na Pokédex deve conter um link de navegação para exibir detalhes deste pokémon. O link deve possuir a URL `/pokemons/<id>`, onde `<id>` é o id do pokémon exibido;
+    - A imagem do Pokémon deve ser exibida. Ela deve conter um atributo `src` com a URL da imagem e um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokémon.
 
-  - Ao clicar no link de navegação do pokémon, a aplicação deve ser redirecionada para a página de detalhes de pokémon. A URL exibida no navegador deve mudar para `/pokemon/<id>`, onde `<id>` é o id do pokémon cujos detalhes se deseja ver;
+  - Teste se o card do Pokémon indicado na Pokédex contém um link de navegação para exibir detalhes deste Pokémon. O link deve possuir a URL `/pokemons/<id>`, onde `<id>` é o id do Pokémon exibido;
 
-  - Pokémons favoritados devem exibir um ícone de uma estrela
+  - Teste se ao clicar no link de navegação do Pokémon, é feito o redirecionamento da aplicação para a página de detalhes de Pokémon. 
+  
+  - Teste também se a URL exibida no navegador muda para `/pokemon/<id>`, onde `<id>` é o id do Pokémon cujos detalhes se deseja ver;
 
-    - O ícone deve ser uma imagem, com o atributo `src` igual `/star-icon.svg`;
+  - Teste se existe um ícone de estrela nos Pokémons favoritados.
 
-    - A imagem deve ter o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do pokémon cujos detalhes estão sendo exibidos.
+    - O ícone deve ser uma imagem com o atributo `src` contendo o caminho `/star-icon.svg`;
 
-### Testes do arquivo PokemonDetails.js
+    - A imagem deve ter o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do Pokémon exibido.
 
-  - Deve conter mais informações sobre apenas o pokémon selecionado;
+### Testando o arquivo PokemonDetails.js
 
-  - A página deve conter um texto `<name> Details`, onde `<name>` é o nome do pokémon;
+  - Teste se as informações detalhadas do Pokémon selecionado são mostradas na tela.
 
-  - O pokémon exibido na página de detalhes não deve conter um link de navegação para exibir detalhes deste pokémon;
+    - A página deve conter um texto `<name> Details`, onde `<name>` é o nome do Pokémon;
 
-  - A seção de detalhes deve conter um heading `h2` com o texto `Summary`;
+    - **Não** deve existir o link de navegação para os detalhes do Pokémon selecionado.
 
-  - A seção de detalhes deve conter um parágrafo com o resumo do pokémon específico sendo visualizado;
+    - A seção de detalhes deve conter um heading `h2` com o texto `Summary`.
 
-  - A página de detalhes deve exibir uma seção com os mapas com as localizações do pokémon
+    - A seção de detalhes deve conter um parágrafo com o resumo do Pokémon específico sendo visualizado.
 
-      - A seção de detalhes deve conter um heading `h2` com o texto `Game Locations of <name>`, , onde `<name>` é o nome do pokémon exibido;
+  - Teste se existe na página uma seção com os mapas contendo as localizações do pokémon
 
-      - A seção de detalhes deve exibir todas as localizações do pokémon;
+    - Deverá conter, na seção de detalhes, um heading `h2` com o texto `Game Locations of <name>`; onde `<name>` é o nome do Pokémon exibido.
 
-      - Cada localização deve exibir o nome da localização e uma imagem do mapa da localização;
+    - Todas as localizações do Pokémon devem ser mostradas na seção de detalhes;
 
-      - A imagem da localização deve ter um atributo `src` com a URL da localização;
+    - Devem ser exibidos, o nome da localização e uma imagem do mapa em cada localização.
 
-      - A imagem da localização deve ter um atributo `alt` com o texto `<name> location`, onde `<name>` é o nome do pokémon.
+    - A imagem da localização deve ter um atributo `src` com a URL da localização.
 
-  - A página de detalhes deve permitir favoritar um pokémon
+    - A imagem da localização deve ter um atributo `alt` com o texto `<name> location`, onde `<name>` é o nome do Pokémon.
 
-    - A página deve conter um checkbox que permita favoritar um pokémon. Cliques no checkbox devem, alternadadamente, adicionar e remover o pokémon da lista de favoritos;
+  - Teste se o usuário pode favoritar um pokémon através da página de detalhes
 
-    - O label do checkbox deve ser `Pokémon favoritado?`.
+    - A página deve exibir um checkbox que permite favoritar o Pokémon.
+    - Cliques alternados no checkbox devem adicionar e remover o Pokémon da lista de favoritos.
+
+    - O label do checkbox deve conter o texto `Pokémon favoritado?`.
 
 ## Quer fazer mais? Temos algumas sugestões!
 
@@ -294,6 +319,16 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
   * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+#### ENTREGA
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+
+Link: [INSERIR LINK]
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no _README_. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
 
