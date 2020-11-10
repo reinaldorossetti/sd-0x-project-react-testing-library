@@ -1,7 +1,6 @@
-src/data.js
 src/*.js
 src/*.css
 src/components/*
 src/services/*
 coverage/*
-src/serviceWorker.js
+reports
