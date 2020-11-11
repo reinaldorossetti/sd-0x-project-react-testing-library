@@ -26,10 +26,8 @@ class PokemonDetails extends React.Component {
   static renderSummary({ summary }) {
     return (
       <section>
-        <h2> {`Summary`} </h2>
-        <p>
-          {`${summary}`}
-        </p>
+        <h2>{`Summary`}</h2>
+        <p>{`${summary}`}</p>
       </section>
     );
   }

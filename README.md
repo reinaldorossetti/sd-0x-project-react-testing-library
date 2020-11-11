@@ -20,6 +20,28 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 * Testar inputs.
 
+## Sumário
+
+  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+  - [Desenvolvimento](#desenvolvimento)
+    - [Data de entrega](#data-de-entrega)
+    - [Quem testa os testes?](#quem-testa-os-testes)
+  - [Requisitos do projeto](#requisitos-do-projeto)
+    - [1. Testando o arquivo App.js](#1-testando-o-arquivo-appjs)
+    - [2. Testando o arquivo About.js](#2-testando-o-arquivo-aboutjs)
+    - [3. Testando o arquivo FavoritePokemons.js](#3-testando-o-arquivo-favoritepokemonsjs)
+    - [4. Testando o arquivo NotFound.js](#4-testando-o-arquivo-notfoundjs)
+    - [5. Testando o arquivo Pokedex.js](#5-testando-o-arquivo-pokedexjs)
+    - [6. Testando o arquivo Pokemon.js](#6-testando-o-arquivo-pokemonjs)
+    - [7. Testando o arquivo PokemonDetails.js](#7-testando-o-arquivo-pokemondetailsjs)
+  - [Quer fazer mais? Temos algumas sugestões!](#quer-fazer-mais-temos-algumas-sugestões)
+  - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+    - [ANTES DE COMEÇAR A DESENVOLVER](#antes-de-começar-a-desenvolver)
+    - [DURANTE O DESENVOLVIMENTO](#durante-o-desenvolvimento)
+    - [DEPOIS DE TERMINAR O DESENVOLVIMENTO](#depois-de-terminar-o-desenvolvimento-opcional)
+    - [ENTREGA](#entrega)
+    - [REVISANDO UM PULL REQUEST](#revisando-um-pull-request)
+
 ## O que deverá ser desenvolvido
 
 Nesse projeto você escreverá testes para uma aplicação React.
@@ -50,11 +72,11 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se o topo da aplicação contém um conjunto fixo de links de navegação
 
-    - O primeiro link deve possuir o texto `Home` com a URL `/`;
+    - O primeiro link deve possuir o texto `Home`.
 
-    - O segundo link deve possuir o texto `About` com a URL `/about`;
+    - O segundo link deve possuir o texto `About`.
 
-    - O terceiro link deve possuir o texto `Favorite Pokémons` com a URL `/favorites`.
+    - O terceiro link deve possuir o texto `Favorite Pokémons`.
 
   - Teste se a aplicação é redirecionada para a página inicial, na URL `/` ao clicar no link `Home` da barra de navegação. 
 
@@ -90,6 +112,8 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
 ### 5. Testando o arquivo Pokedex.js
 
+  - Teste se página contém um heading `h2` com o texto `Encountered pokémons`.
+
   - Teste se é exibido o próximo Pokémon da lista quando o botão `Próximo pokémon` é clicado.
 
     - O botão deve conter o texto `Próximo pokémon`;
@@ -102,7 +126,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se a Pokédex tem os botões de filtro
 
-    - Os Pokémons do tipo selecionado através do `botão de tipo` devem estar circulados.
+    - A partir da seleção de um botão de tipo, a Pokédex deve circular somente pelos pokémons daquele tipo;
 
     - O texto do botão deve corresponder ao `nome do tipo`, ex. `Psychic`.
 
@@ -130,6 +154,8 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
     - O nome correto do Pokémon deve ser mostrado na tela.
 
+    - O tipo correto do pokémon deve ser mostrado na tela.
+
     - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`; onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida.
 
     - A imagem do Pokémon deve ser exibida. Ela deve conter um atributo `src` com a URL da imagem e um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokémon.
@@ -146,7 +172,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
     - A imagem deve ter o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do Pokémon exibido.
 
-### Testando o arquivo PokemonDetails.js
+### 7. Testando o arquivo PokemonDetails.js
 
   - Teste se as informações detalhadas do Pokémon selecionado são mostradas na tela.
 
@@ -322,7 +348,7 @@ Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um vid
 
 ---
 
-#### ENTREGA
+### ENTREGA
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
