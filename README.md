@@ -48,7 +48,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se a página principal da Pokédex é renderizada ao carregar a aplicação no caminho de URL `/`.
 
-  - Teste se o topo da aplicação contém um conjunto fixo de links de navegação
+  - Teste se o topo da aplicação contém um conjunto fixo de links de navegação.
 
     - O primeiro link deve possuir o texto `Home` com a URL `/`;
 
@@ -68,19 +68,19 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se a página contém as informações sobre a Pokédex.
 
-  - Teste se a página contém um heading `h2` com o texto `About Pokédex`;
+  - Teste se a página contém um heading `h2` com o texto `About Pokédex`.
 
-  - Teste se a página contém dois parágrafos com texto sobre a Pokédex;
+  - Teste se a página contém dois parágrafos com texto sobre a Pokédex.
 
   - Teste se a página contém a seguinte imagem de uma Pokédex: `https://cdn.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png`.
 
 ### 3. Testando o arquivo FavoritePokemons.js
 
-  - Teste se é exibido na tela a mensagem `No favorite pokemon found`, caso a pessoa não tenha pokémons favoritos.
+  - Teste se é exibido na tela a mensagem `No favorite pokemon found`, se a pessoa não tiver pokémons favoritos.
 
   - Teste se é exibido todos os cards de pokémons favoritados.
 
-  - Teste se **Não** é exibido nenhum card de pokémon não favoritado.
+  - Teste se **nenhum** card de pokémon é exibido, se ele não estiver favoritado.
 
 ### 4. Testando o arquivo NotFound.js
 
@@ -94,33 +94,33 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
     - O botão deve conter o texto `Próximo pokémon`;
 
-    - Os próximos Pokémons da lista devem ser mostrados, um a um, ao clicar sucessivamente no botão.
+    - Os próximos Pokémons da lista devem ser mostrados, um a um, ao clicar sucessivamente no botão;
 
-    - O primeiro Pokémon da lista deve ser mostrado ao clicar no botão se estiver no último Pokémon da lista.
+    - O primeiro Pokémon da lista deve ser mostrado ao clicar no botão, se estiver no último Pokémon da lista;
 
   - Teste se é mostrado apenas um Pokémon por vez.
 
-  - Teste se a Pokédex tem os botões de filtro
+  - Teste se a Pokédex tem os botões de filtro.
 
-    - Os Pokémons do tipo selecionado através do `botão de tipo` devem estar circulados.
+    - Os Pokémons do tipo selecionado através do `botão de tipo` devem estar destacados;
 
-    - O texto do botão deve corresponder ao `nome do tipo`, ex. `Psychic`.
+    - O texto do botão deve corresponder ao `nome do tipo`, ex. `Psychic`;
 
   - Teste se a Pokédex contém um botão para resetar o filtro
 
-    - O texto do botão deve ser `All`.
+    - O texto do botão deve ser `All`;
 
-    - A Pokedéx deverá voltar a circular por todos os Pokémons quando o botão for clicado.
+    - A Pokedéx deverá mostrar os Pokémons normalmente (sem filtros) quando o botão `All` for clicado;
 
-    - Ao carregar a página, o filtro selecionado deverá ser `All`.
+    - Ao carregar a página, o filtro selecionado deverá ser `All`;
 
   - Teste se é criado, dinamicamente, um botão de filtro para cada tipo de Pokémon.
 
-    - Os botões de filtragem devem ser dinâmicos.
+    - Os botões de filtragem devem ser dinâmicos;
 
-    - Deve existir um botão de filtragem para cada tipo de Pokémon disponível nos dados, independente de quais ou quantos sejam, sem repetição de tipos. Ou seja, a sua Pokédex deve possuir pokémons do tipo `Fire`, `Psychic`, `Electric` e `Normal`.
+    - Deve existir um botão de filtragem para cada tipo de Pokémon disponível nos dados, sem repetição. Ou seja, a sua Pokédex deve possuir pokémons do tipo `Fire`, `Psychic`, `Electric` e `Normal`;
     
-    - Deve ser mostrado como opção de filtro, um botão para cada um dos tipos. Além disso, o botão `All` precisa estar sempre visível.
+    - Deve ser mostrado como opção de filtro, um botão para cada um dos tipos. Além disso, o botão `All` precisa estar **sempre** visível.
 
   - O botão de `Próximo pokémon` deve ser desabilitado quando a lista filtrada de Pokémons tiver um só pokémon.
 
@@ -128,11 +128,11 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se é renderizado um card com as informações de determinado pokémon.
 
-    - O nome correto do Pokémon deve ser mostrado na tela.
+    - O nome correto do Pokémon deve ser mostrado na tela;
 
-    - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`; onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida.
+    - O peso médio do pokémon deve ser exibido com um texto no formato `Average weight: <value> <measurementUnit>`; onde `<value>` e `<measurementUnit>` são, respectivamente, o peso médio do pokémon e sua unidade de medida;
 
-    - A imagem do Pokémon deve ser exibida. Ela deve conter um atributo `src` com a URL da imagem e um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokémon.
+    - A imagem do Pokémon deve ser exibida. Ela deve conter um atributo `src` com a URL da imagem e um atributo `alt` com o texto `<name> sprite`, onde `<name>` é o nome do pokémon;
 
   - Teste se o card do Pokémon indicado na Pokédex contém um link de navegação para exibir detalhes deste Pokémon. O link deve possuir a URL `/pokemons/<id>`, onde `<id>` é o id do Pokémon exibido;
 
@@ -160,22 +160,23 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se existe na página uma seção com os mapas contendo as localizações do pokémon
 
-    - Deverá conter, na seção de detalhes, um heading `h2` com o texto `Game Locations of <name>`; onde `<name>` é o nome do Pokémon exibido.
+    - Na seção de detalhes deverá existir um heading `h2` com o texto `Game Locations of <name>`; onde `<name>` é o nome do Pokémon exibido.
 
     - Todas as localizações do Pokémon devem ser mostradas na seção de detalhes;
 
-    - Devem ser exibidos, o nome da localização e uma imagem do mapa em cada localização.
+    - Devem ser exibidos, o nome da localização e uma imagem do mapa em cada localização;
 
-    - A imagem da localização deve ter um atributo `src` com a URL da localização.
+    - A imagem da localização deve ter um atributo `src` com a URL da localização;
 
-    - A imagem da localização deve ter um atributo `alt` com o texto `<name> location`, onde `<name>` é o nome do Pokémon.
+    - A imagem da localização deve ter um atributo `alt` com o texto `<name> location`, onde `<name>` é o nome do Pokémon;
 
-  - Teste se o usuário pode favoritar um pokémon através da página de detalhes
+  - Teste se o usuário pode favoritar um pokémon através da página de detalhes.
 
-    - A página deve exibir um checkbox que permite favoritar o Pokémon.
-    - Cliques alternados no checkbox devem adicionar e remover o Pokémon da lista de favoritos.
+    - A página deve exibir um `checkbox` que permite favoritar o Pokémon;
 
-    - O label do checkbox deve conter o texto `Pokémon favoritado?`.
+    - Cliques alternados no `checkbox` devem adicionar e remover respectivamente o Pokémon da lista de favoritos;
+
+    - O `label` do `checkbox` deve conter o texto `Pokémon favoritado?`;
 
 ## Quer fazer mais? Temos algumas sugestões!
 
@@ -199,17 +200,17 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
 
     - O link deve conter o texto `Locations`;
 
-    - Ao clicar no link, a página com a lista de localizações deve ser exibida.
+    - Ao clicar no link, a página com a lista de localizações deve ser exibida;
 
-  - Adicione botões de paginação na lista de localizações
+  - Adicione botões de paginação na lista de localizações.
 
   Por default, os _endpoints_ da PokéAPI retornam no máximo 20 resultados. Utilizando os parâmetros `limit` e `offset`, você pode especificar qual página deseja buscar e qual seu tamanho. Veja [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) como utilizar estes parâmetros.
 
     - Adicone dois botões "Anterior" e "Próxima" que permitam navegar entre as página da lista de localizações;
 
-    - Na primeira página, o botão "Anterior" deve ser desabilitado. Da mesma forma, ao alcançar a última página, o botão "Próximo" deve ser desabilitado.
+    - Na primeira página, o botão "Anterior" deve ser desabilitado. Da mesma forma, ao alcançar a última página, o botão "Próximo" deve ser desabilitado;
 
-  - Adiciona uma rota para exibir uma lista de gerações
+  - Adiciona uma rota para exibir uma lista de gerações.
 
     - A URL da rota deve ser `/generations`;
 
@@ -326,7 +327,7 @@ Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um vid
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [INSERIR LINK]
+Link: [Avaliação](https://be-trybe.typeform.com/to/ZTeR4IbH)
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no _README_. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
