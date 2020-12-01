@@ -6,7 +6,33 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
-## Neste projeto, verificamos se você é capaz de:
+# Sumário
+  - [Habilidades](#habilidades)
+  - [Entregáveis](#entregáveis)
+    - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+    - [Desenvolvimento](#desenvolvimento)
+    - [Data de entrega](#data-de-entrega)
+  - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+    - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+    - [Durante o desenvolvimento](#durante-o-desenvolvimento)
+    - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento-opcional)
+  - [Como desenvolver](#como-desenvolver)
+    - [Quem testa os testes?](#quem-testa-os-testes)
+  - [Requisitos do projeto](#requisitos-do-projeto)
+    - [Lista de requisitos](#lista-de-requisitos)
+      - [1. Testando o arquivo App.js](#1-testando-o-arquivo-appjs)
+      - [2. Testando o arquivo About.js](#2-testando-o-arquivo-aboutjs)
+      - [3. Testando o arquivo FavoritePokemons.js](#3-testando-o-arquivo-favoritepokemonsjs)
+      - [4. Testando o arquivo NotFound.js](#4-testando-o-arquivo-notfoundjs)
+      - [5. Testando o arquivo Pokedex.js](#5-testando-o-arquivo-pokedexjs)
+      - [6. Testando o arquivo Pokemon.js](#6-testando-o-arquivo-pokemonjs)
+      - [7. Testando o arquivo PokemonDetails.js](#7-testando-o-arquivo-pokemondetailsjs)
+      - [Quer fazer mais? Temos algumas sugestões!](#quer-fazer-mais-temos-algumas-sugestões)
+  - [Avisos Finais](#avisos-finais)
+
+# Habilidades
+
+Neste projeto, verificamos se voce é capaz de:
 
 * Utilizar os seletores (queries) da React-Testing-Library em testes automatizados.
 
@@ -20,27 +46,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 * Testar inputs.
 
-## Sumário
-
-  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Desenvolvimento](#desenvolvimento)
-    - [Data de entrega](#data-de-entrega)
-    - [Quem testa os testes?](#quem-testa-os-testes)
-  - [Requisitos do projeto](#requisitos-do-projeto)
-    - [1. Testando o arquivo App.js](#1-testando-o-arquivo-appjs)
-    - [2. Testando o arquivo About.js](#2-testando-o-arquivo-aboutjs)
-    - [3. Testando o arquivo FavoritePokemons.js](#3-testando-o-arquivo-favoritepokemonsjs)
-    - [4. Testando o arquivo NotFound.js](#4-testando-o-arquivo-notfoundjs)
-    - [5. Testando o arquivo Pokedex.js](#5-testando-o-arquivo-pokedexjs)
-    - [6. Testando o arquivo Pokemon.js](#6-testando-o-arquivo-pokemonjs)
-    - [7. Testando o arquivo PokemonDetails.js](#7-testando-o-arquivo-pokemondetailsjs)
-  - [Quer fazer mais? Temos algumas sugestões!](#quer-fazer-mais-temos-algumas-sugestões)
-  - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-    - [ANTES DE COMEÇAR A DESENVOLVER](#antes-de-começar-a-desenvolver)
-    - [DURANTE O DESENVOLVIMENTO](#durante-o-desenvolvimento)
-    - [DEPOIS DE TERMINAR O DESENVOLVIMENTO](#depois-de-terminar-o-desenvolvimento-opcional)
-    - [ENTREGA](#entrega)
-    - [REVISANDO UM PULL REQUEST](#revisando-um-pull-request)
+# Entregáveis
 
 ## O que deverá ser desenvolvido
 
@@ -50,9 +56,100 @@ Nesse projeto você escreverá testes para uma aplicação React.
 
 Este repositório já contém uma aplicação React criada e configurada. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você não precisará realizar nenhuma configuração adicional. Você deverá utilizar [`Jest`](https://jestjs.io/) e a biblioteca [`React Testing Library`](https://testing-library.com/) (também já instaladas e configuradas) para escrever os testes. Note que a aplicação contém uma implementação completa de todos os requisitos da Pokédex. Seu trabalho será, para cada requisito listado a seguir, escrever testes que garantam sua corretude. Cuidado com [testes _falsos positivos_](https://talkingabouttesting.com/2015/08/04/falsos-negativos-falsos-positivos-verdadeiros-negativos-e-verdadeiros-positivos/). Falsos positivos serão desconsiderados na avaliação.
 
-### Data de entrega
+## Data de entrega
 
-O projeto deverá ser entregue até a seguinte data para a avaliação final: ``DD/MM/YYYY - 00:00h``.
+Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
+
+# Instruções para entregar seu projeto
+
+### ANTES DE COMEÇAR A DESENVOLVER:
+
+1. Clone o repositório
+  * `git clone git@github.com:tryber/sd-0x-block16-project-react-testing-library.git`.
+  * Entre na pasta do repositório que você acabou de clonar:
+    * `cd sd-0x-block16-project-react-testing-library`
+
+2. Instale as dependências
+  * `npm install`
+
+3. Crie uma branch a partir da branch `master`
+  * Verifique que você está na branch `master`
+    * Exemplo: `git branch`
+  * Se não estiver, mude para a branch `master`
+    * Exemplo: `git checkout master`
+  * Agora crie uma branch para qual você vai submeter os `commits` do seu projeto
+    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
+    * Exemplo: `git checkout -b joaozinho-react-testing`
+
+4. Adicione um teste para algum dos requisitos do projeto. Por exemplo, para o requisito #1, adicione em `App.test.js`:
+
+```javascript
+test('shows the Pokédex when the route is `/`', () => {
+  const { getByText } = render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>,
+  );
+
+  expect(getByText('Encountered pokémons')).toBeInTheDocument();
+});
+```
+
+5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
+  * Verifique que as mudanças ainda não estão no _stage_
+    * Exemplo: `git status` (deve aparecer listado o arquivo _src/last.js_ em vermelho)
+  * Adicione o arquivo alterado ao _stage_ do Git
+      * Exemplo:
+        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
+        * `git status` (deve aparecer listado o arquivo _src/last.js_ em verde)
+  * Faça o `commit` inicial
+      * Exemplo:
+        * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
+        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+
+6. Adicione a sua branch com o novo `commit` ao repositório remoto
+  * Usando o exemplo anterior: `git push -u origin joaozinho-react-testing`
+
+7. Crie um novo `Pull Request` _(PR)_
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-block16-project-react-testing-library/pulls)
+  * Clique no botão verde _"New pull request"_
+  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
+  * Clique no botão verde _"Create pull request"_
+  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
+  * **Não se preocupe em preencher mais nada por enquanto!**
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-block16-project-react-testing-library/pulls) e confira que o seu _Pull Request_ está criado
+
+---
+
+### DURANTE O DESENVOLVIMENTO
+
+* Faça `commits` das alterações que você fizer no código regularmente
+
+* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+
+* Os comandos que você utilizará com mais frequência são:
+  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
+  2. `git add` _(para adicionar arquivos ao stage do Git)_
+  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+
+---
+
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
+
+Para **"entregar"** seu projeto, siga os passos a seguir:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
+
+Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+# Como desenvolver
 
 ### Quem testa os testes?
 
@@ -60,11 +157,15 @@ O projeto deverá ser entregue até a seguinte data para a avaliação final: ``
   Como assim? Pense da seguinte forma: nosso avaliador vai navegar por toda a aplicação da Pokédex e vai fazer várias mudanças no código dela **para que ela quebre e pare de funcionar**. Em seguida ele vai rodar seus testes. Caso seus testes não acusem que aplicação está com problemas o avaliador não vai aprovar aquele requisito! Se, para todas as alterações que o avaliador fizer no código da aplicação, os seus testes acusarem problemas, tudo será aprovado! O avaliador garante, portanto, que seus testes testam a aplicação da Pokédex como se deve!
   Na linguagem do avaliador, dizemos que cada mudança que o avaliador faz na sua aplicação é um **mutante**. O avaliador cria vários mutantes e seus testes **devem matar todos!** Se algum mutante sobreviver, temos problemas. Certo? Vamos aos requisitos então!
 
-## Requisitos do projeto
+# Requisitos do projeto
 
 A seguir estão listados todos os requisitos do projeto. Lembre-se que para a avaliação utilizaremos testes por mutação, então cada requisito só será aceito se os testes tiverem comportamento adequado tanto na aplicação original como na modificada.
 
+⚠ PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
+
 Todos os arquivos de teste que vocês usarão **já estão previamente criados e novos arquivos não devem ser criados**. Como exemplo colocamos um teste dentro do arquivo `src/tests/App.test.js`. Além disso, **cada requisito se refere a um arquivo da aplicação da Pokédex**. Obter aprovação num requisito significa que todos os casos de erro daquele arquivo estão cobertos, ou seja, todos os mutantes criados naquele arquivo pelo avaliador foram mortos. Nos subitens de cada requisito detalhamos o que é necessário fazer para obter a aprovação neles.
+
+## Lista de requisitos
 
 ### 1. Testando o arquivo App.js
 
@@ -260,96 +361,7 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
 
 ---
 
-## Instruções para entregar seu projeto:
-
-### ANTES DE COMEÇAR A DESENVOLVER:
-
-1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-block16-project-react-testing-library.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-block16-project-react-testing-library`
-
-2. Instale as dependências
-  * `npm install`
-
-3. Crie uma branch a partir da branch `master`
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora crie uma branch para qual você vai submeter os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-react-testing`
-
-4. Adicione um teste para algum dos requisitos do projeto. Por exemplo, para o requisito #1, adicione em `App.test.js`:
-
-```javascript
-test('shows the Pokédex when the route is `/`', () => {
-  const { getByText } = render(
-    <MemoryRouter initialEntries={['/']}>
-      <App />
-    </MemoryRouter>,
-  );
-
-  expect(getByText('Encountered pokémons')).toBeInTheDocument();
-});
-```
-
-5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listado o arquivo _src/last.js_ em vermelho)
-  * Adicione o arquivo alterado ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _src/last.js_ em verde)
-  * Faça o `commit` inicial
-      * Exemplo:
-        * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-react-testing`
-
-7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-block16-project-react-testing-library/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-block16-project-react-testing-library/pulls) e confira que o seu _Pull Request_ está criado
-
----
-
-### DURANTE O DESENVOLVIMENTO
-
-* Faça `commits` das alterações que você fizer no código regularmente
-
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-* Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
----
-
-### ENTREGA
+# Avisos Finais
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
@@ -358,13 +370,3 @@ Link: [Avaliação](https://be-trybe.typeform.com/to/ZTeR4IbH)
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no _README_. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
-
-### REVISANDO UM PULL REQUEST
-
-⚠⚠⚠
-
-À medida que você e os outros alunos forem entregando os projetos, vocês serão alertados **via Slack** para também fazer a revisão dos _Pull Requests_ dos seus colegas. Fiquem atentos às mensagens do _"Pull Reminders"_ no _Slack_!
-
-Os monitores também farão a revisão de todos os projetos, e irão avaliar tanto o seu _Pull Request_, quanto as revisões que você fizer nos _Pull Requests_ dos seus colegas!!!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
