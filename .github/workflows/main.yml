@@ -8,6 +8,7 @@ jobs:
     name: Evaluator job
     steps:
       - uses: actions/checkout@v2
+    steps:
       - uses: actions/setup-node@v1.4.4
         with:
           node-version: '12'

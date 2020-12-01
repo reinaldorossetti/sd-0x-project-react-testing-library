@@ -3,7 +3,7 @@
     "browser": true,
     "es2020": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": ["plugin:react/recommended", "airbnb", "eslint:recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -13,7 +13,7 @@
   "plugins": ["react"],
   "rules": {
     "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": 0,
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "class-methods-use-this": ["off"],
@@ -50,11 +50,11 @@
     "object-curly-newline": ["off"],
 
     "import/no-extraneous-dependencies": ["off"],
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
     "react/default-props-match-prop-types": [
       "error",
       {"allowRequiredDefaults": false}
     ],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/destructuring-assignment": ["error", "always"],
     "react/forbid-component-props": ["error"],
     "react/forbid-prop-types": ["error"],
