@@ -19,7 +19,7 @@ jobs:
         id: evaluator
         uses: betrybe/stryker-evaluator-action@v1.1
         with:
-          repository-test-name: 'betrybe/sd-0x-block16-react-tests-tests'
+          repository-test-name: 'betrybe/sd-0x-project-react-testing-library-tests'
           repository-test-branch: 'master'
       - name: Store evaluation step
         uses: betrybe/store-evaluation-action@v2
