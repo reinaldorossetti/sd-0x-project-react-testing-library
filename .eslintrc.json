@@ -3,7 +3,7 @@
     "browser": true,
     "es2020": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "eslint:recommended"],
+  "extends": ["plugin:react/recommended", "airbnb"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -13,7 +13,7 @@
   "plugins": ["react"],
   "rules": {
     "indent": ["error", 2],
-    "linebreak-style": 0,
+    "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "class-methods-use-this": ["off"],

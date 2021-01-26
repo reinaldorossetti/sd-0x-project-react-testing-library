@@ -50,6 +50,10 @@ Neste projeto, verificamos se voce é capaz de:
 
 # Entregáveis
 
+Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
+
+Lembre-se que você pode consultar nosso conteúdo sobre Git & GitHub sempre que precisar!
+
 ## O que deverá ser desenvolvido
 
 Nesse projeto você escreverá testes para uma aplicação React.
@@ -67,9 +71,9 @@ Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-block16-project-react-testing-library.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-react-testing-library.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-block16-project-react-testing-library`
+    * `cd sd-0x-project-react-testing-library`
 
 2. Instale as dependências
   * `npm install`
@@ -138,19 +142,6 @@ test('shows the Pokédex when the route is `/`', () => {
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
----
-
 # Como desenvolver
 
 ### Quem testa os testes?
@@ -158,6 +149,30 @@ Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um vid
   Nesse trabalho o avaliador automatizado **testam os testes de vocês!** A ideia dele é a seguinte: você vai escrever casos de teste para a aplicação, certo? E esses testes têm que garantir que a aplicação está funcionando, certo? Pois bem! Se eu quebro uma parte da aplicação, fazendo uma alteração no código, seus testes devem quebrar, certo? Pois é isso que o avaliador faz.
   Como assim? Pense da seguinte forma: nosso avaliador vai navegar por toda a aplicação da Pokédex e vai fazer várias mudanças no código dela **para que ela quebre e pare de funcionar**. Em seguida ele vai rodar seus testes. Caso seus testes não acusem que aplicação está com problemas o avaliador não vai aprovar aquele requisito! Se, para todas as alterações que o avaliador fizer no código da aplicação, os seus testes acusarem problemas, tudo será aprovado! O avaliador garante, portanto, que seus testes testam a aplicação da Pokédex como se deve!
   Na linguagem do avaliador, dizemos que cada mudança que o avaliador faz na sua aplicação é um **mutante**. O avaliador cria vários mutantes e seus testes **devem matar todos!** Se algum mutante sobreviver, temos problemas. Certo? Vamos aos requisitos então!
+
+## Linter
+
+  Para garantir a qualidade do código, vamos utilizar neste projeto os linters `ESLint` e `StyleLint`.
+  Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível
+  e de fácil manutenção! Para rodá-los localmente no projeto, execute os comandos abaixo:
+
+  ```bash
+    npm run lint
+    npm run lint:styles
+  ```
+
+⚠️ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.
+ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠️
+
+## Testes
+
+  - Haverá uma pasta chamada `./stryker` nela irá conter uns `nomeArquivo.conf.json`, cada um dele é a configuração do stryker para cada teste e como executá-los? quando você completar os testes unitarios de um arquivo, basta rodar o comando `npx stryker run ./stryker/nomeDoArquivo.config.json`.
+
+  - Um exemplo prático
+    - 1 Passo: Acabei de fazer os testes unitários do arquivo `Pokedex.test.js`
+    - 2 Passo: Rodo os testes unitários para ver se passou todos os testes.
+    - 3 Passo: Rodo o comando stryker daquele arquivo de testes `npx stryker run ./stryker/Pokedex.conf.json`
+    * Com o comando acima ele vai executar o stryker e verificar se os seus testes unitários estão corretos.
 
 # Requisitos do projeto
 
@@ -169,7 +184,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
 ## Lista de requisitos
 
-### 1. Testando o arquivo App.js
+### 1. Testar o arquivo App.js
 
   - Teste se a página principal da Pokédex é renderizada ao carregar a aplicação no caminho de URL `/`.
 
@@ -189,7 +204,11 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se a aplicação é redirecionada para a página `Not Found` ao entrar em uma URL desconhecida.
 
-### 2. Testando o arquivo About.js
+  **O que será verificado:**
+  
+  - Será avaliado se o arquivo teste `App.test.js` contemplam 100% do stryker.
+
+### 2. Testar o arquivo About.js
 
   - Teste se a página contém as informações sobre a Pokédex.
 
@@ -199,7 +218,11 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se a página contém a seguinte imagem de uma Pokédex: `https://cdn.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png`.
 
-### 3. Testando o arquivo FavoritePokemons.js
+  **O que será verificado:**
+    
+  - Será avaliado se o arquivo teste `About.test.js` contemplam 100% do stryker.
+
+### 3. Testar o arquivo FavoritePokemons.js
 
   - Teste se é exibido na tela a mensagem `No favorite pokemon found`, se a pessoa não tiver pokémons favoritos.
 
@@ -207,13 +230,21 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Teste se **nenhum** card de pokémon é exibido, se ele não estiver favoritado.
 
-### 4. Testando o arquivo NotFound.js
+  **O que será verificado:**
+
+  - Será avaliado se o arquivo teste `FavoritePokemons.test.js` contemplam 100% do stryker.
+
+### 4. Testar o arquivo NotFound.js
 
   - Teste se página contém um heading `h2` com o texto `Page requested not found 😭`;
 
   - Teste se página mostra a imagem `https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif`.
 
-### 5. Testando o arquivo Pokedex.js
+  **O que será verificado:**
+
+  - Será avaliado se o arquivo teste `NotFound.test.js` contemplam 100% do stryker.
+
+### 5. Testar o arquivo Pokedex.js
 
   - Teste se página contém um heading `h2` com o texto `Encountered pokémons`.
 
@@ -251,7 +282,11 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - O botão de `Próximo pokémon` deve ser desabilitado quando a lista filtrada de Pokémons tiver um só pokémon.
 
-### 6. Testando o arquivo Pokemon.js
+  **O que será verificado:**
+
+  - Será avaliado se o arquivo teste `Pokedex.test.js` contemplam 100% do stryker.
+
+### 6. Testar o arquivo Pokemon.js
 
   - Teste se é renderizado um card com as informações de determinado pokémon.
 
@@ -275,7 +310,11 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
     - A imagem deve ter o atributo `alt` igual a `<pokemon> is marked as favorite`, onde `<pokemon>` é o nome do Pokémon exibido.
 
-### 7. Testando o arquivo PokemonDetails.js
+    **O que será verificado:**
+
+    - Será avaliado se o arquivo teste `Pokemon.test.js` contemplam 100% do stryker.
+
+### 7. Testar o arquivo PokemonDetails.js
 
   - Teste se as informações detalhadas do Pokémon selecionado são mostradas na tela.
 
@@ -306,6 +345,10 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
     - Cliques alternados no `checkbox` devem adicionar e remover respectivamente o Pokémon da lista de favoritos;
 
     - O `label` do `checkbox` deve conter o texto `Pokémon favoritado?`;
+
+    **O que será verificado:**
+
+    - Será avaliado se o arquivo teste `PokemonDetails.test.js` contemplam 100% do stryker.
 
 ## Quer fazer mais? Temos algumas sugestões!
 
@@ -360,6 +403,27 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
   - Adicione a cada geração na lista de gerações um link para a página de detalhes desta geração
 
     - Ao clicar no link, a página com informações sobre a geração clicada deve ser exibida.
+
+---
+
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
+
+Para **"entregar"** seu projeto, siga os passos a seguir:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
+
+Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+### Revisando um pull request
+
+À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
+
+Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
 
 ---
 
