@@ -176,6 +176,17 @@ ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠️
     - Passo 3: _"Agora vou rodar o comando para o requisito com `npx stryker run ./stryker/Pokedex.conf.json`!"_
     * Com o comando acima ele vai executar o stryker e verificar se os seus testes unitários estão corretos.
 
+  - Quando é executado o comando `npx stryker run ./stryker/PokemonDetails.conf.json` com todos os testes passando o stryker apresenta essa resposta.
+
+
+    ![image](testepassando.png)
+    * a imagem acima mostra que todos os testes foram contemplatos pelo stryker
+
+    Um exemplo de falha é quando os meus testes unitários não cobriram 100% de caso de testes do que foi desenvolvido e irá printar o seguinte resultado abaixo:
+
+    ![image](testefalhando.png)
+    * a imagem acima mostra que alguns testes não foram contemplatos pelo stryker, onde 4 testes foram contemplados e 3 testes unitários não foram feitos.
+
 # Requisitos do projeto
 
 A seguir estão listados todos os requisitos do projeto. Lembre-se que para a avaliação utilizaremos testes por mutação, então cada requisito só será aceito se os testes tiverem comportamento adequado tanto na aplicação original como na modificada.
