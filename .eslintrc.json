@@ -1,27 +1,27 @@
 {
   "env": {
     "browser": true,
-    "es2020": true
+    "es2020": true,
+    "jest": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": ["plugin:react/recommended", "airbnb", "eslint:recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "sonarjs"],
   "rules": {
     "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": 0,
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "class-methods-use-this": ["off"],
-    "complexity": ["off", 11],
     "no-magic-numbers": [
       "error",
       {
-        "ignore": [1],
+        "ignore": [0, 1, 2, 100],
         "ignoreArrayIndexes": true,
         "enforceConst": true,
         "detectObjects": false
@@ -36,6 +36,7 @@
       }
     ],
     "no-console": ["off"],
+    "no-underscore-dangle": ["off"],
     "no-param-reassign": ["off"],
     "consistent-return": ["off"],
     "no-undef": ["off"],
@@ -47,14 +48,35 @@
         "ignoreUrls": true
       }
     ],
+    "max-params": ["error", 4],
+    "max-lines": ["error", 250],
+    "max-lines-per-function": ["error", 150],
+    "complexity": ["error", 15],
     "object-curly-newline": ["off"],
-
     "import/no-extraneous-dependencies": ["off"],
-    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+    "sonarjs/cognitive-complexity": ["error", 15],
+    "sonarjs/no-collapsible-if": ["error"],
+    "sonarjs/no-collection-size-mischeck": ["error"],
+    "sonarjs/no-duplicate-string": ["error"],
+    "sonarjs/no-duplicated-branches": ["error"],
+    "sonarjs/no-extra-arguments": ["error"],
+    "sonarjs/no-identical-conditions": ["error"],
+    "sonarjs/no-identical-expressions": ["error"],
+    "sonarjs/no-identical-functions": ["error"],
+    "sonarjs/no-inverted-boolean-check": ["error"],
+    "sonarjs/no-one-iteration-loop": ["error"],
+    "sonarjs/no-redundant-boolean": ["error"],
+    "sonarjs/no-unused-collection": ["error"],
+    "sonarjs/no-use-of-empty-return-value": ["error"],
+    "sonarjs/no-useless-catch": ["error"],
+    "sonarjs/prefer-object-literal": ["error"],
+    "sonarjs/prefer-single-boolean-return": ["error"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/default-props-match-prop-types": [
       "error",
       {"allowRequiredDefaults": false}
     ],
+    "react/no-array-index-key": ["off"],
     "react/destructuring-assignment": ["error", "always"],
     "react/forbid-component-props": ["error"],
     "react/forbid-prop-types": ["error"],
@@ -78,7 +100,7 @@
     "react/jsx-closing-tag-location": ["error"],
     "react/jsx-curly-newline": ["error"],
     "react/jsx-fragments": ["error"],
-    "react/jsx-max-depth": ["error", {"max": 8}],
+    "react/jsx-max-depth": ["error", {"max": 4}],
     "react/jsx-no-useless-fragment": ["error"],
     "react/jsx-curly-spacing": ["error", {"when": "always"}],
     "react/jsx-equals-spacing": ["error", "never"],
@@ -86,7 +108,7 @@
     "react/jsx-indent": [
       "error",
       2,
-      {"checkAttributes": true, "indentLogicalExpressions": true}
+      { "checkAttributes": true, "indentLogicalExpressions": true }
     ],
     "react/jsx-indent-props": ["error", 2],
     "react/jsx-key": ["error"],

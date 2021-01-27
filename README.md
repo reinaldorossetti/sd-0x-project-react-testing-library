@@ -17,18 +17,20 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
     - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
     - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-    - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento-opcional)
-  - [Como desenvolver](#como-desenvolver)
-    - [Quem testa os testes?](#quem-testa-os-testes)
+    - [Como desenvolver](#como-desenvolver)
+      - [Linter](#linter)
+      - [Testes](#testes)
+      - [Quem testa os testes?](#quem-testa-os-testes)
   - [Requisitos do projeto](#requisitos-do-projeto)
     - [Lista de requisitos](#lista-de-requisitos)
-      - [1. Testando o arquivo App.js](#1-testando-o-arquivo-appjs)
-      - [2. Testando o arquivo About.js](#2-testando-o-arquivo-aboutjs)
-      - [3. Testando o arquivo FavoritePokemons.js](#3-testando-o-arquivo-favoritepokemonsjs)
-      - [4. Testando o arquivo NotFound.js](#4-testando-o-arquivo-notfoundjs)
-      - [5. Testando o arquivo Pokedex.js](#5-testando-o-arquivo-pokedexjs)
-      - [6. Testando o arquivo Pokemon.js](#6-testando-o-arquivo-pokemonjs)
-      - [7. Testando o arquivo PokemonDetails.js](#7-testando-o-arquivo-pokemondetailsjs)
+      - [1. Testar o arquivo App.js](#1-testar-o-arquivo-appjs)
+      - [2. Testar o arquivo About.js](#2-testar-o-arquivo-aboutjs)
+      - [3. Testar o arquivo FavoritePokemons.js](#3-testar-o-arquivo-favoritepokemonsjs)
+      - [4. Testar o arquivo NotFound.js](#4-testar-o-arquivo-notfoundjs)
+      - [5. Testar o arquivo Pokedex.js](#5-testa-o-arquivo-pokedexjs)
+      - [6. Testar o arquivo Pokemon.js](#6-testar-o-arquivo-pokemonjs)
+      - [7. Testar o arquivo PokemonDetails.js](#7-testar-o-arquivo-pokemondetailsjs)
+      - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento-opcional)
       - [Quer fazer mais? Temos algumas sugestões!](#quer-fazer-mais-temos-algumas-sugestões)
   - [Avisos Finais](#avisos-finais)
 
@@ -71,9 +73,9 @@ Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-project-react-testing-library.git`.
+  * `git clone git@github.com:tryber/sd-00-project-react-testing-library.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-project-react-testing-library`
+    * `cd sd-00-project-react-testing-library`
 
 2. Instale as dependências
   * `npm install`
@@ -166,12 +168,12 @@ ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠️
 
 ## Testes
 
-  - Haverá uma pasta chamada `./stryker` nela irá conter uns `nomeArquivo.conf.json`, cada um dele é a configuração do stryker para cada teste e como executá-los? quando você completar os testes unitarios de um arquivo, basta rodar o comando `npx stryker run ./stryker/nomeDoArquivo.config.json`.
+  - Haverá uma pasta chamada `./stryker` com diversos arquivos `nomeArquivo.conf.json`. Cada um deles é a configuração do avaliador para um requisito e ela **não deve ser alterada**. Quando você completar os testes unitarios de um arquivo, rode o comando `npx stryker run ./stryker/nomeDoArquivo.config.json` para testar aquele arquivo individualmente.
 
-  - Um exemplo prático
-    - 1 Passo: Acabei de fazer os testes unitários do arquivo `Pokedex.test.js`
-    - 2 Passo: Rodo os testes unitários para ver se passou todos os testes.
-    - 3 Passo: Rodo o comando stryker daquele arquivo de testes `npx stryker run ./stryker/Pokedex.conf.json`
+   - Por exemplo:
+    - Passo 1: _"Acabei de fazer os testes unitários do arquivo `Pokedex.test.js`!"_
+    - Passo 2: _"Vou rodar os meus testes para ver se eles estão todos passando!"_
+    - Passo 3: _"Agora vou rodar o comando para o requisito com `npx stryker run ./stryker/Pokedex.conf.json`!"_
     * Com o comando acima ele vai executar o stryker e verificar se os seus testes unitários estão corretos.
 
 # Requisitos do projeto
@@ -206,7 +208,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   **O que será verificado:**
   
-  - Será avaliado se o arquivo teste `App.test.js` contemplam 100% do stryker.
+  - Será avaliado se o arquivo teste `App.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
 ### 2. Testar o arquivo About.js
 
@@ -220,7 +222,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   **O que será verificado:**
     
-  - Será avaliado se o arquivo teste `About.test.js` contemplam 100% do stryker.
+  - Será avaliado se o arquivo teste `About.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
 ### 3. Testar o arquivo FavoritePokemons.js
 
@@ -232,7 +234,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   **O que será verificado:**
 
-  - Será avaliado se o arquivo teste `FavoritePokemons.test.js` contemplam 100% do stryker.
+  - Será avaliado se o arquivo teste `FavoritePokemons.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
 ### 4. Testar o arquivo NotFound.js
 
@@ -242,7 +244,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   **O que será verificado:**
 
-  - Será avaliado se o arquivo teste `NotFound.test.js` contemplam 100% do stryker.
+  - Será avaliado se o arquivo teste `NotFound.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
 ### 5. Testar o arquivo Pokedex.js
 
@@ -284,7 +286,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   **O que será verificado:**
 
-  - Será avaliado se o arquivo teste `Pokedex.test.js` contemplam 100% do stryker.
+  - Será avaliado se o arquivo teste `Pokedex.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
 ### 6. Testar o arquivo Pokemon.js
 
@@ -312,7 +314,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
     **O que será verificado:**
 
-    - Será avaliado se o arquivo teste `Pokemon.test.js` contemplam 100% do stryker.
+    - Será avaliado se o arquivo teste `Pokemon.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
 ### 7. Testar o arquivo PokemonDetails.js
 
@@ -348,7 +350,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
     **O que será verificado:**
 
-    - Será avaliado se o arquivo teste `PokemonDetails.test.js` contemplam 100% do stryker.
+    - Será avaliado se o arquivo teste `PokemonDetails.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
 ## Quer fazer mais? Temos algumas sugestões!
 
