@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Evaluator step
         id: evaluator
-        uses: betrybe/stryker-evaluator-action@v1.1
+        uses: betrybe/stryker-evaluator-action@v1.2
         with:
           repository-test-name: 'betrybe/sd-0x-project-react-testing-library-tests'
           repository-test-branch: 'master'

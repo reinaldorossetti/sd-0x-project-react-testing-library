@@ -23,15 +23,15 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
       - [Quem testa os testes?](#quem-testa-os-testes)
   - [Requisitos do projeto](#requisitos-do-projeto)
     - [Lista de requisitos](#lista-de-requisitos)
-      - [1. Testar o arquivo App.js](#1-testar-o-arquivo-appjs)
-      - [2. Testar o arquivo About.js](#2-testar-o-arquivo-aboutjs)
-      - [3. Testar o arquivo FavoritePokemons.js](#3-testar-o-arquivo-favoritepokemonsjs)
-      - [4. Testar o arquivo NotFound.js](#4-testar-o-arquivo-notfoundjs)
-      - [5. Testar o arquivo Pokedex.js](#5-testa-o-arquivo-pokedexjs)
-      - [6. Testar o arquivo Pokemon.js](#6-testar-o-arquivo-pokemonjs)
-      - [7. Testar o arquivo PokemonDetails.js](#7-testar-o-arquivo-pokemondetailsjs)
-      - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento-opcional)
+      - [1. Teste o componente `<App.js />`](#1-teste-o-componente-)
+      - [2. Teste o componente `<About.js />`](#2-teste-o-componente-)
+      - [3. Teste o componente `<FavoritePokemons.js />`](#3-teste-o-componente-)
+      - [4. Teste o componente `<NotFound.js />`](#4-teste-o-componente-)
+      - [5. Teste o componente `<Pokedex.js />`](#5-teste-o-componente-)
+      - [6. Teste o componente `<Pokemon.js />`](#6-teste-o-componente-)
+      - [7. Teste o componente `<PokemonDetails.js />`](#7-teste-o-componente-)
       - [Quer fazer mais? Temos algumas sugestões!](#quer-fazer-mais-temos-algumas-sugestões)
+    - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento-opcional)
   - [Avisos Finais](#avisos-finais)
 
 # Habilidades
@@ -176,13 +176,13 @@ ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠️
     - Passo 3: _"Agora vou rodar o comando para o requisito com `npx stryker run ./stryker/Pokedex.conf.json`!"_
     * Com o comando acima ele vai executar o stryker e verificar se os seus testes unitários estão corretos.
 
-  - Quando é executado o comando `npx stryker run ./stryker/PokemonDetails.conf.json` com todos os testes passando o stryker apresenta essa resposta.
+  - Quando o comando `npx stryker run ./stryker/PokemonDetails.conf.json` for executado, com todos os testes passando, o avaliador apresentará uma saída semelhante à abaixo.
 
 
     ![image](testepassando.png)
-    * a imagem acima mostra que todos os testes foram contemplatos pelo stryker
+    * Repare que, na tabela, 4 casos de uso constam como `Killed` e 3 constam como `Survived`. Isso significa que **3 casos de uso não foram contemplados pelos seus testes**! Os casos de uso gerados, que geraram os erros, aparecem acima. Na linha verde (ao lado de cada símbolo `+`), o Stryker exibe o erro que ele injetou no teste para testar um caso de uso. Esse erro não foi coberto pelo seu teste.
 
-    Um exemplo de falha é quando os meus testes unitários não cobriram 100% de caso de testes do que foi desenvolvido e irá printar o seguinte resultado abaixo:
+   Uma falha ocorre quando os testes unitários não cobrem 100% de caso de uso gerados pelo Stryker. Nesse caso, algo semelhante à imagem abaixo aparecerá.
 
     ![image](testefalhando.png)
     * a imagem acima mostra que alguns testes não foram contemplatos pelo stryker, onde 4 testes foram contemplados e 3 testes unitários não foram feitos.
@@ -197,7 +197,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
 ## Lista de requisitos
 
-### 1. Testar o arquivo App.js
+### 1. Teste o componente `<App.js />`
 
   - Teste se a página principal da Pokédex é renderizada ao carregar a aplicação no caminho de URL `/`.
 
@@ -221,7 +221,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
   
   - Será avaliado se o arquivo teste `App.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
-### 2. Testar o arquivo About.js
+### 2. Teste o componente `<About.js /.`
 
   - Teste se a página contém as informações sobre a Pokédex.
 
@@ -235,7 +235,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
     
   - Será avaliado se o arquivo teste `About.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
-### 3. Testar o arquivo FavoritePokemons.js
+### 3. Teste o componente `<FavoritePokemons.js />`
 
   - Teste se é exibido na tela a mensagem `No favorite pokemon found`, se a pessoa não tiver pokémons favoritos.
 
@@ -247,7 +247,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Será avaliado se o arquivo teste `FavoritePokemons.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
-### 4. Testar o arquivo NotFound.js
+### 4. Teste o componente `<NotFound.js />`
 
   - Teste se página contém um heading `h2` com o texto `Page requested not found 😭`;
 
@@ -257,7 +257,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Será avaliado se o arquivo teste `NotFound.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
-### 5. Testar o arquivo Pokedex.js
+### 5. Teste o componente `<Pokedex.js />`
 
   - Teste se página contém um heading `h2` com o texto `Encountered pokémons`.
 
@@ -299,7 +299,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
   - Será avaliado se o arquivo teste `Pokedex.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
-### 6. Testar o arquivo Pokemon.js
+### 6. Teste o componente `<Pokemon.js />`
 
   - Teste se é renderizado um card com as informações de determinado pokémon.
 
@@ -327,7 +327,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
     - Será avaliado se o arquivo teste `Pokemon.test.js` contemplam 100% dos casos de uso criados pelo Stryker.
 
-### 7. Testar o arquivo PokemonDetails.js
+### 7. Teste o componente `<PokemonDetails.js />`
 
   - Teste se as informações detalhadas do Pokémon selecionado são mostradas na tela.
 
