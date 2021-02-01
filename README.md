@@ -32,8 +32,9 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
       - [6. Teste o componente `<Pokemon.js />`](#6-teste-o-componente-pokemonjs-)
       - [7. Teste o componente `<PokemonDetails.js />`](#7-teste-o-componente-pokemondetailsjs-)
       - [Quer fazer mais? Temos algumas sugestões!](#quer-fazer-mais-temos-algumas-sugestões)
-    - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento-opcional)
-  - [Avisos Finais](#avisos-finais)
+- [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
+- [Revisando um pull request](#revisando-um-pull-request)
+- [Avisos Finais](#avisos-finais)
 
 # Habilidades
 
