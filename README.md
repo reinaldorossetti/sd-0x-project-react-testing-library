@@ -77,9 +77,9 @@ Este repositório já contém uma aplicação React criada e configurada. Após 
 ### Antes de começar a desenvolver:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-00-project-react-testing-library.git`.
+  * `git clone https://github.com/tryber/tryber/sd-0x-project-react-testing-library.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-00-project-react-testing-library`
+    * `cd sd-0x-project-react-testing-library`
 
 2. Instale as dependências
   * `npm install`
