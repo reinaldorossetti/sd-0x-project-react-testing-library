@@ -32,7 +32,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
       - [6. Teste o componente `<Pokemon.js />`](#6-teste-o-componente-pokemonjs-)
       - [7. Teste o componente `<PokemonDetails.js />`](#7-teste-o-componente-pokemondetailsjs-)
       - [Quer fazer mais? Temos algumas sugestões!](#quer-fazer-mais-temos-algumas-sugestões)
-- [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
 - [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos Finais](#avisos-finais)
 
@@ -56,7 +56,8 @@ Neste projeto, verificamos se voce é capaz de:
 
 Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
 
-Lembre-se que você pode consultar nosso conteúdo sobre Git & GitHub sempre que precisar!
+Lembre-se que você pode consultar nosso conteúdo sobre
+[Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
 
 ## O que deverá ser desenvolvido
 
@@ -68,7 +69,8 @@ Este repositório já contém uma aplicação React criada e configurada. Após 
 
 ## Data de entrega
 
-Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
+  - Serão `X` dias de projeto.
+  - Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
 
 # Instruções para entregar seu projeto
 
@@ -133,6 +135,8 @@ test('shows the Pokédex when the route is `/`', () => {
 
 ### Durante o desenvolvimento
 
+* ⚠ **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+
 * Faça `commits` das alterações que você fizer no código regularmente
 
 * Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
@@ -141,8 +145,8 @@ test('shows the Pokédex when the route is `/`', () => {
   1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
   2. `git add` _(para adicionar arquivos ao stage do Git)_
   3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+  5. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  4. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
 
 ---
 
@@ -421,16 +425,18 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
 
 ---
 
-### Depois de terminar o desenvolvimento (opcional)
+### Depois de terminar o desenvolvimento
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo **Lint** estão resolvidas! ⚠
 
 ---
 
@@ -446,8 +452,8 @@ Use o material que você já viu sobre [Code Review](https://course.betrybe.com/
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [Avaliação](https://be-trybe.typeform.com/to/ZTeR4IbH)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
 
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no _README_. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
