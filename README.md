@@ -71,7 +71,7 @@ Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
 
 # Instruções para entregar seu projeto
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+### Antes de começar a desenvolver:
 
 1. Clone o repositório
   * `git clone git@github.com:tryber/sd-00-project-react-testing-library.git`.
@@ -130,7 +130,7 @@ test('shows the Pokédex when the route is `/`', () => {
 
 ---
 
-### DURANTE O DESENVOLVIMENTO
+### Durante o desenvolvimento
 
 * Faça `commits` das alterações que você fizer no código regularmente
 
@@ -420,7 +420,7 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
+### Depois de terminar o desenvolvimento (opcional)
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
