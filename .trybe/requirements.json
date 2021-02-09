@@ -23,6 +23,10 @@
     {
       "description": "PokemonDetails mutation test",
       "bonus": false
+    },
+    {
+      "description": "Pokedex mutation test",
+      "bonus": false
     }
   ]
 }
