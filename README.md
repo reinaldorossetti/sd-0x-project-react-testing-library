@@ -386,7 +386,7 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
 
     - A URL da rota deve ser `/locations`;
 
-    - A página deve exibir uma lista com as localizações retornadas pela PokéAPI. Você pode ler [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) e [aqui](https://pokeapi.co/docs/v2.html/#locations-section) como utilizar a PokéAPI para buscar uma lista de localizações.
+    - A página deve exibir uma lista com as localizações retornadas pela PokéAPI. Você pode ler [aqui](https://pokeapi.co/docs/v2#resource-lists-section) e [aqui](https://pokeapi.co/docs/v2#locations-section) como utilizar a PokéAPI para buscar uma lista de localizações.
 
   - Adicione na barra de navegação um link para a lista de localizações
 
@@ -396,7 +396,7 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
 
   - Adicione botões de paginação na lista de localizações.
 
-  Por default, os _endpoints_ da PokéAPI retornam no máximo 20 resultados. Utilizando os parâmetros `limit` e `offset`, você pode especificar qual página deseja buscar e qual seu tamanho. Veja [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) como utilizar estes parâmetros.
+  Por default, os _endpoints_ da PokéAPI retornam no máximo 20 resultados. Utilizando os parâmetros `limit` e `offset`, você pode especificar qual página deseja buscar e qual seu tamanho. Veja [aqui](https://pokeapi.co/docs/v2#resource-lists-section) como utilizar estes parâmetros.
 
     - Adicone dois botões "Anterior" e "Próxima" que permitam navegar entre as página da lista de localizações;
 
@@ -406,7 +406,7 @@ Se quiser implemente os requisitos propostos a seguir e escreva testes para eles
 
     - A URL da rota deve ser `/generations`;
 
-    - A página deve exibir uma lista com as gerações retornadas pela PokéAPI. Você pode ler [aqui](https://pokeapi.co/docs/v2.html/#resource-lists-section) e [aqui](https://pokeapi.co/docs/v2.html/#generations) como utilizar a PokéAPI para buscar uma lista de gerações.
+    - A página deve exibir uma lista com as gerações retornadas pela PokéAPI. Você pode ler [aqui](https://pokeapi.co/docs/v2#resource-lists-section) e [aqui](https://pokeapi.co/docs/v2#generations) como utilizar a PokéAPI para buscar uma lista de gerações.
 
   - Adicione na barra de navegação um link para a lista de gerações
 
