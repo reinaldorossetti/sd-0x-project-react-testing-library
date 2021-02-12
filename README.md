@@ -296,7 +296,7 @@ Todos os arquivos de teste que vocês usarão **já estão previamente criados e
 
     - Os botões de filtragem devem ser dinâmicos;
 
-    - Deve existir um botão de filtragem para cada tipo de Pokémon disponível nos dados, sem repetição. Ou seja, a sua Pokédex deve possuir pokémons do tipo `Fire`, `Psychic`, `Electric` e `Normal`;
+    - Deve existir um botão de filtragem para cada tipo de Pokémon disponível nos dados, sem repetição. Ou seja, a sua Pokédex deve possuir pokémons do tipo `Fire`, `Psychic`, `Electric`, `Bug`, `Poison`, `Dragon` e `Normal`;
     
     - Deve ser mostrado como opção de filtro, um botão para cada um dos tipos. Além disso, o botão `All` precisa estar **sempre** visível.
 
